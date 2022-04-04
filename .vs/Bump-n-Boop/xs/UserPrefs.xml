@@ -3,9 +3,9 @@
     <Files>
       <File FileName="../../Bump n Boop file/Assets/BumpNBoop/Scripts for Player/CollisionDetect.cs" Line="32" Column="1" />
       <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="49" Column="84" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" />
-      <File FileName="Assets/BumpNBoop/Scripts for Player/PlayerController.cs" Line="673" Column="98" />
-      <File FileName="Assets/BumpNBoop/TunnelScript.cs" Line="10" Column="20" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="18" Column="51" />
+      <File FileName="Assets/BumpNBoop/Scripts for Player/PlayerController.cs" Line="313" Column="14" />
+      <File FileName="Assets/BumpNBoop/TunnelScript.cs" Line="29" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
