@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
 
+using DG.Tweening;
+
 public class StartButtonAction : MonoBehaviour {
 
     [SerializeField]
@@ -42,7 +44,14 @@ public class StartButtonAction : MonoBehaviour {
     public void StartButtonClick()
     {
         PlayerController.Instance.StartGame = true;
-        postProcess.weight = 0;
+        //postProcess.weight = 0;
+
+        DOTween.To(() => postProcess.weight, x => postProcess.weight = x, 0, 0.5f);
+        //.OnUpdate(() => {
+
+        
+
+        //});
 
         //ScriptHolderPANEL.gameObject.SetActive(true);
         transform.parent.gameObject.SetActive(false);

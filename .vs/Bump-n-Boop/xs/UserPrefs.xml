@@ -1,18 +1,36 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Bump n Boop file/Assets/BumpNBoop/Scripts for Player/CollisionDetect.cs">
+﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs">
     <Files>
       <File FileName="../../Bump n Boop file/Assets/BumpNBoop/Scripts for Player/CollisionDetect.cs" Line="32" Column="1" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="47" Column="11" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Bump-n-Boop" expanded="True" selected="True" />
+          <Node name="Bump-n-Boop" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="BumpNBoop" expanded="True">
+                <Node name="Scripts for UI" expanded="True">
+                  <Node name="StartButtonAction.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Plugins" expanded="True">
+                <Node name="Demigiant" expanded="True">
+                  <Node name="DOTween" expanded="True">
+                    <Node name="Modules" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2a026fe1-1027-4873-b3a4-fad5d1dd42e5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
