@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         ///           Block Script;    Switch statement for Levels 
         /// 
         /// </summary>
-        if (Block != null || PlayerLevel==19)
+        if (Block != null || PlayerLevel == 19)
         {
             switch (PlayerLevel)
             {
@@ -309,280 +309,9 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                         Instr2 = false;
                     }
 
-                    Block.transform.Translate(0, 0, -0.1f, Space.World);
-
                     break;
-                case 1: case 2: 
-
-                    Block.transform.Translate(0, 0, -0.14f, Space.World);
-
-                    break;
-                case 3:
-                case 4:
-                
-
-                    if (RandomPosToRot == 0)
-                    {
-                        Block.transform.Translate(0, 0, -0.2f, Space.World);
-                    }
-                    else
-                    {
-                        Block.transform.Translate(0, 0, -0.1f, Space.World);
-                    }
-
-                    if (ChangeRotSide)                                          // [    change rotation pos    ]
-                    {
-                        RandomPosToRot = Random.Range(0, 2);
-                        ChangeRotSide = false;
-                        StartCoroutine(ChangeRotationSide());
-                    }
-
-                    break;
-                case 5:
-
-                    Block.transform.Translate(0, 0, -0.1f, Space.World);
-
-                    break;
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-
-                    if (CurrentBlockNum >= 2)     // for rotation  
-                    {
-                        foreach (Transform block in Block)
-                        {
-                            block.transform.Rotate(0, 0, 1f, Space.World);
-                        }
-                    }
-                    else
-                    {
-                        Block.transform.Rotate(0, 0, 1f, Space.World);
-                    }
-
-                    Block.transform.Translate(0, 0, -0.14f, Space.World);
-
-                    break;
-
-                case 11:
-                case 12:
-
-                    if (RandomPosToRot == 0)
-                    {
-                        Block.transform.Rotate(0, 0, 1f, Space.World);
-                    }
-                    else
-                    {
-                        Block.transform.Rotate(0, 0, -1f, Space.World);
-                    }
-
-                    Block.transform.Translate(0, 0, -0.1f, Space.World);
-                    break;
-
-                case 13:
-                case 14:
-                case 15:
-
-
-                    if (RandomPosToRot == 0)
-                    {
-                        Block.transform.Rotate(0, 0, 1f, Space.World);
-                    }
-                    else
-                    {
-                        Block.transform.Rotate(0, 0, -1f, Space.World);
-                    }
-
-                    Block.transform.Translate(0, 0, -0.1f, Space.World);
-
-                    if (ChangeRotSide)                                          // [    change rotation pos    ]
-                    {
-                        RandomPosToRot = Random.Range(0, 2);
-                        ChangeRotSide = false;
-                        StartCoroutine(ChangeRotationSide());
-                    }
-
-
-                    break;
-                case 16:
-
-                    Block.transform.Translate(0, 0, -0.1f, Space.World);
-
-                    break;
-                case 17:
-                    if (CurrentBlockNum >= 2)
-                    {
-                        int ite = 0;
-
-                        foreach (Transform block in Block)
-                        {
-       
-                            if(RandomPosToMoveTo[ite]==0 && block.position.y >= -3f) 
-                            {
-                                block.transform.Translate(0, -0.02f, 0, Space.World);
-                            }
-                            else if (block.position.y <= 3f)
-                            {
-                                block.transform.Translate(0, 0.02f, 0, Space.World);
-                            }
-
-                            ite++;
-                        }
-                        
-                    }
-                   
-                    Block.transform.Translate(0, 0, -0.14f, Space.World);
-
-                    break;
-
-                case 18:
-                    if (CurrentBlockNum >= 2)
-                    {
-                        int ina = 0;
-
-                        foreach (Transform block in Block)
-                        {
-
-                            if (RandomPosToMoveTo[ina] == 0 && block.position.y >= -3f)
-                            {
-                                block.transform.Translate(0, -0.02f, 0, Space.World);
-                            }
-                            else if (block.position.y <= 3f)
-                            {
-                                block.transform.Translate(0, 0.02f, 0, Space.World);
-                            }
-
-                            ina++;
-                        }
-
-                    }
-                    else if (RandomPosToRot == 0)
-                    {
-                        Block.transform.Rotate(0, 0, 1f, Space.World);
-                    }
-                    else
-                    {
-                        Block.transform.Rotate(0, 0, -1f, Space.World);
-                    }
-
-                    if (ChangeRotSide)                                          
-                    {
-                        RandomPosToRot = Random.Range(0, 2);
-                        ChangeRotSide = false;
-                        StartCoroutine(ChangeRotationSide());
-                    }
-
-                    Block.transform.Translate(0, 0, -0.14f, Space.World);
-                    break;
-
-                case 19:
-                    //Debug.Log("HIOO");
-                    break;
-                case 20:
-
-                    int iter = 0;
-
-                    foreach (Transform block in Block)
-                    {
-
-                        if (RandomPosToMoveTo[iter] == 0 && block.position.y >= -3f)
-                        {
-                            block.transform.Translate(0, -0.02f, 0, Space.World);
-                        }
-                        else if (block.position.y <= 3f)
-                        {
-                            block.transform.Translate(0, 0.02f, 0, Space.World);
-                        }
-
-                        iter++;
-                    }
-
-                    Block.transform.Translate(0, 0, -0.1f, Space.World);
-                    break;
-
-                case 21:
-                case 22:
-
-                    if (CurrentBlockNum >= 2)
-                    {
-                        int it = 0;
-
-                        foreach (Transform block in Block)
-                        {
-
-                            if (RandomPosToMoveTo[it] == 0 && block.position.y >= -3f)
-                            {
-                                block.transform.Translate(0, -0.02f, 0, Space.World);
-                            }
-                            else if (block.position.y <= 3f)
-                            {
-                                block.transform.Translate(0, 0.02f, 0, Space.World);
-                            }
-
-                            it++;
-                        }
-
-                    }
-                    else if (RandomPosToRot == 0)
-                    {
-                        Block.transform.Rotate(0, 0, 1f, Space.World);
-                    }
-                    else
-                    {
-                        Block.transform.Rotate(0, 0, -1f, Space.World);
-                    }
-
-                    if (ChangeRotSide)
-                    {
-                        RandomPosToRot = Random.Range(0, 2);
-                        ChangeRotSide = false;
-                        StartCoroutine(ChangeRotationSide());
-                    }
-
-                    Block.transform.Translate(0, 0, -0.14f, Space.World);
-
-                    break;
-
             }
         }
-        else
-        {  
-            if (PlayerLevel != 19)                                        //      for normal Block Instantiate other then level 19    ;;;
-            {
-                if (PlayerLevel == 16 || PlayerLevel == 20 || PlayerLevel == 5)
-                {
-                    TextBlockInstantiate();
-                }
-                else
-                {
-                    BlocksInstantiate(BlockNum);
-                }
-
-                if (PlayerLevel > 10)      // [ FOR LEVEL ] 
-                {
-                    RandomPosToRot = Random.Range(0, 2);
-                }
-                if (PlayerLevel >= 17)
-                {
-                    for (int i = 0; i < 5; i++)
-                    {
-
-                        int randPos = Random.Range(0, 2);
-
-                        RandomPosToMoveTo[i] = randPos;
-                    }
-                }
-            }
-        }
-        
-        if ( PlayerLevel != 19 && Block.transform.position.z <= Balls[0].transform.position.z-1f )               //       for other levels   
-        {
-            Destroy(Block.gameObject);
-        }
-       
-
-        // working on this
 
     }
     #region Done with
@@ -630,12 +359,16 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
         ///<summary>
         /// 
-        ///       CLAMP POSITION FOR FIRST BALLs
+        ///       CLAMP POSITION FOR FIRST BALLs in Tunnel
         /// 
         /// </summary>
 
-        Balls[0].transform.position = new Vector3(Mathf.Clamp(Balls[0].transform.position.x, -4.5f, 4.5f), Mathf.Clamp(Balls[0].transform.position.y, -4.5f, 4.5f), 0);
+        Vector3 v = Vector3.ClampMagnitude(Balls[0].transform.position, 7f);
+        Balls[0].transform.position = v;
 
+        //Balls[0].transform.position = new Vector3(Mathf.Clamp(Balls[0].transform.position.x, -4.5f, 4.5f), Mathf.Clamp(Balls[0].transform.position.y, -4.5f, 4.5f), 0);
+
+       
         ///<summary>
         /// 
         ///      snake type movement of rest of the balls          
@@ -663,20 +396,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         ///        Camera Position Slerp to Ball Position
         /// 
         ///</summary>
+        float yPos = Balls[0].transform.position.y > 3 ? Balls[0].transform.position.y : Balls[0].transform.position.y + 2;
+        Vector3 BallToCam = Vector3.ClampMagnitude( new Vector3(Balls[0].transform.position.x, yPos , -10), 10f);
 
-        DistBallToCam = Vector3.SqrMagnitude(MainCam.position - Balls[(Balls.Count > 15 ? 14 : Balls.Count-1)].transform.position);
+        MainCam.transform.position = Vector3.Slerp(MainCam.transform.position, BallToCam, 0.05f);
 
-        Vector3 BallToCam = new Vector3(Balls[(Balls.Count > 15 ? 14 : Balls.Count - 1)].transform.position.x, Balls[(Balls.Count > 15 ? 14 : Balls.Count - 1)].transform.position.y + 2, -10);
-        //Debug.Log(Balls[Balls.Count - 1].transform.position.y - MainCam.transform.position.y);
-        if (Mathf.Abs(Balls[0].transform.position.y - MainCam.transform.position.y) < -1)
-        {
-            MainCam.transform.position = Vector3.Slerp(MainCam.transform.position, BallToCam, 0.01f * Balls.Count > 15? 14 : Balls.Count * (DistBallToCam * 0.05f));
-        }
-        else
-        {
-            MainCam.transform.position = Vector3.Slerp(MainCam.transform.position, BallToCam, 0.08f);
-        }
-        // Edit multiply value for better result
+        //Vector3 vCam = Vector3.ClampMagnitude(BallToCam, 6f);
+        //MainCam.transform.position = vCam;
 
     }
 

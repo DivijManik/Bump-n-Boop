@@ -7,18 +7,23 @@ public class TunnelScript : MonoBehaviour
     [SerializeField]
     List<Transform> tunnelObj;
 
+    public float TunnelSpeed = -1f;
+
     void FixedUpdate()
     {
-        transform.Translate(0, 0, -0.1f);
-
-        if (tunnelObj[0].transform.position.z < -75f)
+        if (PlayerController.Instance.StartGame)
         {
-            Transform t = tunnelObj[0];
-            tunnelObj.Remove(t);
+            transform.Translate(0, 0, TunnelSpeed * Time.deltaTime);
 
-            t.transform.position = tunnelObj[tunnelObj.Count - 1].position + new Vector3(0, 0, 60);
+            if (tunnelObj[0].transform.position.z < -75f)
+            {
+                Transform t = tunnelObj[0];
+                tunnelObj.Remove(t);
 
-            tunnelObj.Add(t);
+                t.transform.position = tunnelObj[tunnelObj.Count - 1].position + new Vector3(0, 0, 60);
+
+                tunnelObj.Add(t);
+            }
         }
     }
 }
