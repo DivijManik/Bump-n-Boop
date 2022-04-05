@@ -69,7 +69,7 @@ public class CollisionDetect : MonoBehaviour
     {
         if(other.transform.CompareTag("Boost"))
         {
-            TunnelScript.Instance.TunnelSpeed -= 0.01f;
+            TunnelScript.Instance.TunnelSpeed -= 0.1f;
         }
     }
 

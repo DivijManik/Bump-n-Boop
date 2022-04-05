@@ -75,6 +75,7 @@ public class TunnelScript : MonoBehaviour
         CoolDown = true;
         yield return new WaitForSeconds(7f);
 
-        DOTween.To(() => tunnelSpeed, x => tunnelSpeed = x, tunnelRealSpeed, 0.5f);
+        float d = tunnelSpeed;
+        DOTween.To(() => tunnelSpeed, x => tunnelSpeed = x, tunnelRealSpeed, d);
     }
 }

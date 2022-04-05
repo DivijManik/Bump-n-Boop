@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TunnelScript.cs">
     <Files>
       <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="49" Column="84" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="20" Column="8" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="20" Column="9" />
       <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="709" Column="83" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="83" Column="1" />
-      <File FileName="Assets/Scripts/TunnelScript.cs" Line="22" Column="6" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="72" Column="55" />
+      <File FileName="Assets/Scripts/TunnelScript.cs" Line="80" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,7 +35,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4cecec1c-6f77-4a5d-8d2e-c54809014daf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c84aef2a-c197-48f7-9d42-6f668f275eed" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
