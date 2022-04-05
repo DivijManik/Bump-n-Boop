@@ -31,11 +31,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     // Transform[] Balls;
     int BallCount;
 
+    [HideInInspector]
     public List<Transform> Balls = new List<Transform>();  // List of Balls
     CollisionDetect FirstBallCol;
 
     [SerializeField] Material[] MatPrefabs;  // colors for Balls
 
+    [HideInInspector]
     public bool Pressed = false; // Press on panel(touch)
     Touch touch;
 
@@ -85,7 +87,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     float TimeAdd = 0.6f;
     float ActualTime = 0f;
 
-    int PlayerLevel=0;
+    [HideInInspector]
+    public int PlayerLevel=0;
 
     [HideInInspector]
     public bool StartGame = false;

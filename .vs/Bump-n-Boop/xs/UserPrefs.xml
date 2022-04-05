@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BumpNBoop/TunnelScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TunnelScript.cs">
     <Files>
-      <File FileName="../../Bump n Boop file/Assets/BumpNBoop/Scripts for Player/CollisionDetect.cs" Line="32" Column="1" />
       <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="49" Column="84" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="18" Column="51" />
-      <File FileName="Assets/BumpNBoop/Scripts for Player/PlayerController.cs" Line="313" Column="14" />
-      <File FileName="Assets/BumpNBoop/TunnelScript.cs" Line="29" Column="2" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="20" Column="8" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="709" Column="83" />
+      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="60" Column="1" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="83" Column="1" />
+      <File FileName="Assets/Scripts/TunnelScript.cs" Line="22" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,9 +14,7 @@
           <Node name="Bump-n-Boop" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="BumpNBoop" expanded="True">
-                <Node name="Scripts for Player" expanded="True" />
                 <Node name="Scripts for UI" expanded="True" />
-                <Node name="TunnelScript.cs" selected="True" />
               </Node>
               <Node name="Plugins" expanded="True">
                 <Node name="Demigiant" expanded="True">
@@ -23,6 +22,10 @@
                     <Node name="Modules" expanded="True" />
                   </Node>
                 </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="Scripts for Player" expanded="True" />
+                <Node name="TunnelScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -32,7 +35,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="83df4129-d735-4bab-9b11-da3816138ff0" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4cecec1c-6f77-4a5d-8d2e-c54809014daf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

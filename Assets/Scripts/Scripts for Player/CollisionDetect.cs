@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class CollisionDetect : MonoBehaviour
 {
-    //public bool remove = false;
-    MeshRenderer Our;
-
     bool DetecCollision = false;
 
     public PlayerController PC;
@@ -22,49 +19,66 @@ public class CollisionDetect : MonoBehaviour
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
-        Our = gameObject.GetComponent<MeshRenderer>();
 
         StartCoroutine(WaitToDetect());   // WaitToDetect()
     }
-    
+
+    // FOr Obstacles
     private void OnTriggerEnter(Collider other)
     {
-        if (DetecCollision == false || other.transform.parent.name == "Player")
+        if (DetecCollision == false || other.transform.CompareTag("Player"))
         {
             return;
         }
-        if (other.transform.childCount >0 )
+        else if(other.transform.CompareTag("Boost"))
+        {
+            TunnelScript.Instance.StopCooldown();
+            return;
+        }
+
+        //  get text object
+        if (other.transform.childCount > 0)
         {
             Transform canvas = other.transform.GetChild(0);
             Text TextGO = canvas.GetChild(0).GetComponent<Text>();
 
             otherMat = TextGO.text.Substring(0, 1);
-
-           // Destroy(other.transform.gameObject);
         }
         else
         {
+            // or get block
             MeshRenderer OtherMR = other.gameObject.GetComponent<MeshRenderer>();
             otherMat = OtherMR.material.name.Substring(0, 1);
-
-            //string ourMat = Our.material.name.Substring(0, 1);
-            
         }
-       // if(otherMat == ourMat)
-        //{
-            //Debug.Log("YES");
-            //remove = true;
-          //  PC.RemoveBalls();
-       // }
-        //else
-        //{
+
+        if (otherMat != "0")
+        {
             PC.InsertBalls(otherMat);
-        //}
+        }
+        else
+        {
+            // you collided with obstacle like axe // GAME OVER //
 
+        }
+        
+        // move obstacle behind the view so Obstacle Handler can use it
+        other.transform.parent.position = new Vector3(0, 0, -20);
+    }
 
-        Destroy(other.transform.parent.gameObject);
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.transform.CompareTag("Boost"))
+        {
+            TunnelScript.Instance.TunnelSpeed -= 0.01f;
+        }
+    }
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.CompareTag("Boost"))
+        {
+            TunnelScript.Instance.StartCooldown();
+        }
     }
 
     IEnumerator WaitToDetect()
