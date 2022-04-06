@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TunnelScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
       <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="49" Column="84" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="20" Column="9" />
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="709" Column="83" />
-      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="72" Column="55" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="405" Column="98" />
+      <File FileName="Assets/Scripts/ObstacleHandler.cs" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="80" Column="6" />
     </Files>
     <Pads>
@@ -24,8 +24,9 @@
                 </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Scripts for Player" expanded="True" />
-                <Node name="TunnelScript.cs" selected="True" />
+                <Node name="Scripts for Player" expanded="True">
+                  <Node name="PlayerController.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -35,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c84aef2a-c197-48f7-9d42-6f668f275eed" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="181f2369-39a0-40c8-987a-7d087f8f96bb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
