@@ -411,7 +411,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     private void FixedUpdate()
     {
-        if(Balls.Count == 0)
+        if(Balls.Count == 0 || StartGame == false)
         {
             return;
         }

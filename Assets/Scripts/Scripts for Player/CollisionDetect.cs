@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CollisionDetect : MonoBehaviour
 {
@@ -36,6 +37,13 @@ public class CollisionDetect : MonoBehaviour
             TunnelScript.Instance.TunnelSpeed -= 1f;
             return;
         }
+        else if(other.transform.CompareTag("Obstacle"))
+        {
+            PlayerController.Instance.StartGame = false;
+            StartCoroutine(WaitToRestartLevel());
+            return;
+        }
+
 
         //  get text object
         if (other.transform.childCount > 0)
@@ -79,5 +87,11 @@ public class CollisionDetect : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         DetecCollision = true;
+    }
+    IEnumerator WaitToRestartLevel()
+    {
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(0);
     }
 }
