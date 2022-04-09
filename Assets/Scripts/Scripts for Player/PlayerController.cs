@@ -400,7 +400,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         /// 
         ///</summary>
         float yPos = Balls[0].transform.position.y > 3 ? Balls[0].transform.position.y : Balls[0].transform.position.y + 2;
-        Vector3 BallToCam = Vector3.ClampMagnitude( new Vector3(Balls[0].transform.position.x, yPos , -10), 10f);
+        Vector3 BallToCam = Vector3.ClampMagnitude( new Vector3(Balls[0].transform.position.x, yPos , -8), 10f);
 
         MainCam.transform.position = Vector3.Slerp(MainCam.transform.position, BallToCam, 0.05f);
 

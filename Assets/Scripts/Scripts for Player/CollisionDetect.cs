@@ -33,6 +33,7 @@ public class CollisionDetect : MonoBehaviour
         else if(other.transform.CompareTag("Boost"))
         {
             TunnelScript.Instance.StopCooldown();
+            TunnelScript.Instance.TunnelSpeed -= 1f;
             return;
         }
 
@@ -63,14 +64,6 @@ public class CollisionDetect : MonoBehaviour
         
         // move obstacle behind the view so Obstacle Handler can use it
         other.transform.parent.position = new Vector3(0, 0, -20);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.transform.CompareTag("Boost"))
-        {
-            TunnelScript.Instance.TunnelSpeed -= 0.1f;
-        }
     }
 
     private void OnTriggerExit(Collider other)

@@ -28,7 +28,7 @@ public class ObstacleHandler : MonoBehaviour
     //Boost
     [SerializeField] List<Transform> Boosts = new List<Transform>();
 
-    // Stack are objects that are pooled for current round
+    // Stack are objects that are pooled for current round 
     void AddToStack()
     {
         if(PlayerController.Instance.PlayerLevel <= 25)
@@ -53,20 +53,66 @@ public class ObstacleHandler : MonoBehaviour
         }
         
     }
+
     private void FixedUpdate()
     {
-        BoostForPlayer();
+        if (PlayerController.Instance.StartGame)
+        {
+            BoostForPlayer();
+            Obstacles(PlayerController.Instance.PlayerLevel);
+        }
     }
 
     void BoostForPlayer()
     {
-        if (Mathf.Abs(Time.time) % 3 == 0)
+        if (Mathf.Abs(Time.time) % 5 == 0)
         {
             int rand = Random.Range(0, Boosts.Count - 1);
 
             if (Boosts[rand].position.z < -15)
             {
                 Boosts[rand].position = new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f);
+            }
+        }       
+    }
+
+    void Obstacles(int level)
+    {
+        if (Mathf.Abs(Time.time) % 2 == 0)
+        {
+            switch (level)
+            {
+                case int n when (n <= 25):
+
+                    Transform t;
+
+                    if (transform.childCount < 25)
+                    {
+                        int rand = Random.Range(0, level_25_Obstacles.Count);
+                        t = Instantiate(level_25_Obstacles[rand], transform);
+                    }
+                    else
+                    {
+                        int rand = Random.Range(0, transform.childCount);
+                        while (transform.GetChild(rand).position.z >= -10)
+                        {
+                            rand = Random.Range(0, transform.childCount);
+                        }
+                        t = transform.GetChild(rand);
+                    }
+
+                    if(t!=null)
+                        t.position = new Vector3(t.position.x,t.position.y,60f);
+
+                    //if (level_25_Obstacles[rand].position.z < -15)
+                    //{
+                    //    Boosts[rand].position = new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f);
+                    //}
+
+                    break;
+                case int n when (n <= 50):
+
+                    break;
             }
         }
     }
