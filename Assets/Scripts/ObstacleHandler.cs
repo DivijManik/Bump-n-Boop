@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ObstacleHandler : MonoBehaviour
 {
+    // Obstacle & collectibles z pos is to be 60f
+    const float zPos = 60f;
     //PREFABS
-
     [SerializeField]
     List<Transform> level_25_Obstacles;
 
@@ -71,7 +72,7 @@ public class ObstacleHandler : MonoBehaviour
 
             if (Boosts[rand].position.z < -15)
             {
-                Boosts[rand].position = new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f);
+                Boosts[rand].position = new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), zPos);
             }
         }       
     }
@@ -102,7 +103,7 @@ public class ObstacleHandler : MonoBehaviour
                     }
 
                     if(t!=null)
-                        t.position = new Vector3(t.position.x,t.position.y,60f);
+                        t.position = new Vector3(t.position.x,t.position.y,zPos);
 
                     //if (level_25_Obstacles[rand].position.z < -15)
                     //{
