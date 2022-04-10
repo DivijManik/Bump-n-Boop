@@ -66,6 +66,7 @@
     <Compile Include="Assets/Extra scene/P1/trigger_evt.cs" />
     <Compile Include="Assets/Extra scene/P2/CreateMesh.cs" />
     <Compile Include="Assets/Extra scene/P2/MeshScript.cs" />
+    <Compile Include="Assets/Scripts/Managers/AudioManager.cs" />
     <Compile Include="Assets/Scripts/ObstacleHandler.cs" />
     <Compile Include="Assets/Scripts/Scripts for Player/CollisionDetect.cs" />
     <Compile Include="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" />
