@@ -34,7 +34,13 @@ public class CollisionDetect : MonoBehaviour
         else if(other.transform.CompareTag("Boost"))
         {
             TunnelScript.Instance.StopCooldown();
-            TunnelScript.Instance.TunnelSpeed -= 1f;
+
+            if (TunnelScript.Instance.TunnelSpeed == TunnelScript.Instance.tunnelRealSpeed)
+            {
+                TunnelScript.Instance.TunnelSpeed = TunnelScript.Instance.tunnelRealSpeed * 2;
+                AudioManager.Instance.BG_MusicSpeed(true);
+            }
+
             return;
         }
         else if(other.transform.CompareTag("Obstacle"))
@@ -90,6 +96,8 @@ public class CollisionDetect : MonoBehaviour
     }
     IEnumerator WaitToRestartLevel()
     {
+        AudioManager.Instance.BG_MusicSpeed(false);
+
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(0);

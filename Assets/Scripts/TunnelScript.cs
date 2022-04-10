@@ -76,6 +76,6 @@ public class TunnelScript : MonoBehaviour
         yield return new WaitForSeconds(7f);
 
         float d = tunnelSpeed;
-        DOTween.To(() => tunnelSpeed, x => tunnelSpeed = x, tunnelRealSpeed, d);
+        DOTween.To(() => tunnelSpeed, x => tunnelSpeed = x, tunnelRealSpeed, d).OnComplete(()=> { AudioManager.Instance.BG_MusicSpeed(false); });
     }
 }

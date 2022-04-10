@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
+    [SerializeField] AudioSource BgAudio;
+
     private void Awake()
     {
         if(Instance== null)
@@ -19,5 +21,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
+    public void BG_MusicSpeed(bool SpeedUp)
+    {
+        if (SpeedUp)
+        {
+            BgAudio.pitch = 1.06f;
+        }
+        else
+        {
+            BgAudio.pitch = 1f;
+        }
+    }
 }
