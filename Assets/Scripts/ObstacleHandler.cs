@@ -42,7 +42,7 @@ public class ObstacleHandler : MonoBehaviour
     [SerializeField]
     List<Transform> level_300_Col;
     //END
-
+    
     List<Transform> StackObstacle = new List<Transform>();
     List<Transform> StackCol = new List<Transform>();
 
@@ -97,6 +97,8 @@ public class ObstacleHandler : MonoBehaviour
             }
         }       
     }
+
+    // StackObstacle & StackCol after new case in switch statement
 
     void Obstacles(int level)
     {
@@ -170,47 +172,67 @@ public class ObstacleHandler : MonoBehaviour
     void BlocksColor(Transform Blocks)
     {
         int childWithSameColor = Random.Range(0, Blocks.childCount); // Get a random child object from blockParent
+        int childWithSameColor1 = Random.Range(0, Blocks.childCount);
+
+        while(childWithSameColor != childWithSameColor1)
+        {
+            childWithSameColor1 = Random.Range(0, Blocks.childCount);
+        }
+
         int iter = 0;
 
         foreach (Transform childBlock in Blocks)
         {
             MeshRenderer BlockMR = childBlock.GetComponent<MeshRenderer>();
 
-            if (iter != childWithSameColor)
+            if (iter != childWithSameColor || iter != childWithSameColor1)
             {
                 int RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
 
                 BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
             }
-            else
+            else if(iter == childWithSameColor)
             {
                 string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
 
-                if (BallMatName == "b")
-                {
-                    BlockMR.material = PlayerController.Instance.MatPrefabs[0];
-                }
-                else if (BallMatName == "g")
-                {
-                    BlockMR.material = PlayerController.Instance.MatPrefabs[1];
-                }
-                else if (BallMatName == "o")
-                {
-                    BlockMR.material = PlayerController.Instance.MatPrefabs[2];
-                }
-                else if (BallMatName == "r")
-                {
-                    BlockMR.material = PlayerController.Instance.MatPrefabs[3];
-                }
-                else if (BallMatName == "y")
-                {
-                    BlockMR.material = PlayerController.Instance.MatPrefabs[4];
-                }
+                BlockMR.material = MatName(BallMatName);
+            }
+            else
+            {
+                string BallMatName = PlayerController.Instance.Balls[1].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+                BlockMR.material = MatName(BallMatName);
             }
 
             iter++;
 
         }
+    }
+
+    Material MatName(string BallMatName)
+    {
+        if (BallMatName == "b")
+        {
+            return PlayerController.Instance.MatPrefabs[0];
+        }
+        else if (BallMatName == "g")
+        {
+            return PlayerController.Instance.MatPrefabs[1];
+        }
+        else if (BallMatName == "o")
+        {
+            return PlayerController.Instance.MatPrefabs[2];
+        }
+        else if (BallMatName == "r")
+        {
+            return  PlayerController.Instance.MatPrefabs[3];
+        }
+        else if (BallMatName == "y")
+        {
+             return PlayerController.Instance.MatPrefabs[4];
+        }
+
+        return null;
     }
 
 }

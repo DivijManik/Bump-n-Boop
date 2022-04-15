@@ -13,8 +13,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     int n;
     int oldn;
 
-    [SerializeField]
-    Transform Ball;  // prefab
+    [SerializeField]Transform Ball;  // prefab
 
     [SerializeField]
     Transform Parent;  // empty parent obj 
@@ -26,10 +25,6 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     [SerializeField]
     Transform MainCam;  // Main Cam
-    float DistBallToCam;
-
-    // Transform[] Balls;
-    int BallCount;
 
     [HideInInspector]
     public List<Transform> Balls = new List<Transform>();  // List of Balls
@@ -42,13 +37,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     Touch touch;
 
     int count;
-    
-    /// <summary>
-    ///
-    ///         Block ::::: Blocks :::::
-    /// 
-    /// </summary>
 
+    ///         Block ::::: Blocks :::::
     [SerializeField]
     Transform BlockParent;
 
@@ -67,17 +57,9 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     bool Instr2;
 
     int BallSpawnNumber; // Number of Balls to spawn
-    int BlockNum; // Range from where to start for spawning blocks
-
-    int CurrentBlockNum; // current index of the block     [ FOR LEVEL ] 
-    int RandomPosToRot;  // Rotate to the left or right   [ For Level ]
-    bool ChangeRotSide=true; // LEVEL 14-15
 
     [SerializeField]
     Transform TextBlock;     // TEXT BLOCK
-
-    //Random pos to move to
-    int[] RandomPosToMoveTo = new int[5];
 
     // Small Interval block               [   for level 19   ]
     [SerializeField]
@@ -115,14 +97,6 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         if (PlayerLevel < 5)
         {
             BallSpawnNumber = 4; // number of balls to spawn
-            if (PlayerLevel <= 1)
-            {
-                BlockNum = 3; // only cube blocks
-            }
-            else
-            {
-                BlockNum = 2; //  (also instantiates capsule blocks)
-            }
         }
         else if(PlayerLevel<10)
         {
@@ -134,17 +108,14 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             {
                 BallSpawnNumber = 7;
             }
-            BlockNum = 1;
         }
         else if(PlayerLevel<=15)
         {
             BallSpawnNumber = 8;
-            BlockNum = 0;
         }
         else
         {
             BallSpawnNumber = 10;
-            BlockNum = 0;
         }
 
         /*
@@ -158,11 +129,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     
     void Start()
     {
-        foreach (Transform t in BlockParent)
-        {
-            Destroy(t.gameObject);
-        }
-
+        BallPos = 0;
         for (int i = 0; i < BallSpawnNumber; i++)
         {
             Vector3 Pos = new Vector3(Parent.transform.position.x, Parent.transform.position.y, Parent.transform.position.z + BallPos);
@@ -238,7 +205,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                     Destroy(Parent.GetChild(i).gameObject);
                 }
             }
-            ChangeRotSide=true;
+            //ChangeRotSide=true;
 
             // call awake and start again to instantiate balls
             Awake();Start();
@@ -290,12 +257,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             SmallIntervalBlockInstantiate();
             return;
         }
+
         ///<summary>
         ///
-        ///           Block Script;    Switch statement for Levels 
+        ///           Instruction screen
         /// 
         /// </summary>
-        if (Block != null || PlayerLevel == 19)
+        if (Block != null)
         {
             switch (PlayerLevel)
             {
