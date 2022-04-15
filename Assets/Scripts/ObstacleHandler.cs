@@ -165,6 +165,7 @@ public class ObstacleHandler : MonoBehaviour
 
     /// <summary>
     ///
+    ///             FOR COLOR OBJECTS
     ///             Random Color === Block color to Ball color
     ///
     /// </summary>
