@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ObstacleHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="74" Column="6" />
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" />
-      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="10" Column="4" />
-      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="104" Column="6" />
-      <File FileName="Assets/Scripts/Managers/AudioManager.cs" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="69" Column="22" />
+      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="171" Column="19" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="55" Column="32" />
+      <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="16" Column="48" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="63" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Bump-n-Boop" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
+            <Node name="Assets" expanded="True">
               <Node name="BumpNBoop" expanded="True">
                 <Node name="Scripts for UI" expanded="True" />
               </Node>
@@ -24,7 +25,9 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Managers" expanded="True" />
-                <Node name="Scripts for Player" expanded="True" />
+                <Node name="Scripts for Player" expanded="True">
+                  <Node name="PlayerController.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

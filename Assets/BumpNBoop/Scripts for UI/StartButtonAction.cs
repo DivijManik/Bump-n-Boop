@@ -60,6 +60,7 @@ public class StartButtonAction : MonoBehaviour {
 
     public void InstructionClick()
     {
+        PlayerController.Instance.StartGame = true;
         transform.gameObject.SetActive(false);
     }
 

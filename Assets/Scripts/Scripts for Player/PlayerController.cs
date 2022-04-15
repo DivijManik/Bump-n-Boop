@@ -42,9 +42,6 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     [SerializeField]
     Transform BlockParent;
 
-    [SerializeField]
-    Transform [] Blocks;
-
     Transform Block;
 
     [SerializeField]
@@ -179,8 +176,6 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     void Update()
     {
-        
-        //    <<<<      working on this   >>>
         if (StartGame == false || Instruction1.activeInHierarchy==true || Instruction2.activeInHierarchy == true)
         {  
             return;
@@ -263,27 +258,26 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         ///           Instruction screen
         /// 
         /// </summary>
-        if (Block != null)
+        switch (PlayerLevel)
         {
-            switch (PlayerLevel)
-            {
-                case 0:
-                    if (Instr1)
-                    {
-                        Instruction1.gameObject.SetActive(true);
-                        Instr1 = false;
-                        StartCoroutine(Instr2Active());
-                    }
-                    if (Instr2 && !Instr1)
-                    {
-                        Instruction2.gameObject.SetActive(true);
-                        Instr2 = false;
-                    }
+            case 0:
+                if (Instr1)
+                {
+                    StartGame = false;
+                    Instruction1.gameObject.SetActive(true);
+                    Instr1 = false;
+                    StartCoroutine(Instr2Active());
+                }
+                if (Instr2 && !Instr1)
+                {
+                    StartGame = false;
+                    Instruction2.gameObject.SetActive(true);
+                    Instr2 = false;
+                }
 
-                    break;
-            }
+                break;
         }
-
+        
     }
     #region Done with
 
@@ -379,7 +373,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     private void FixedUpdate()
     {
-        if(Balls.Count == 0 || StartGame == false)
+        if (Balls.Count == 0 || StartGame == false)
         {
             return;
         }
