@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boost
   - Obstacle
+  - ColorObj
   layers:
   - Default
   - TransparentFX

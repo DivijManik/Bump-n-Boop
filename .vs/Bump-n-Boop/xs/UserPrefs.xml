@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/CollisionDetect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ObstacleHandler.cs">
     <Files>
-      <File FileName="Assets/Scripts/TunnelScript.cs" Line="12" Column="36" />
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="419" Column="6" />
-      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="67" Column="26" />
-      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="39" Column="10" />
-      <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="11" Column="25" />
+      <File FileName="Assets/Scripts/TunnelScript.cs" Line="74" Column="6" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" />
+      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="10" Column="4" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="104" Column="6" />
+      <File FileName="Assets/Scripts/Managers/AudioManager.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Bump-n-Boop" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="BumpNBoop" expanded="True">
                 <Node name="Scripts for UI" expanded="True" />
               </Node>
@@ -24,9 +24,7 @@
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="Managers" expanded="True" />
-                <Node name="Scripts for Player" expanded="True">
-                  <Node name="CollisionDetect.cs" selected="True" />
-                </Node>
+                <Node name="Scripts for Player" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -36,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4729fb21-5892-47d5-9423-92e3d5094ef8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f10df434-c883-4677-be77-0f597938eac4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

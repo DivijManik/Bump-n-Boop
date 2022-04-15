@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     public List<Transform> Balls = new List<Transform>();  // List of Balls
     CollisionDetect FirstBallCol;
 
-    [SerializeField] Material[] MatPrefabs;  // colors for Balls
+    [SerializeField] public Material[] MatPrefabs;  // colors for Balls
 
     [HideInInspector]
     public bool Pressed = false; // Press on panel(touch)
@@ -552,64 +552,6 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     /// <summary>
     ///
-    ///             Blocks Instatiate === Random Color === Block color to Ball color
-    ///
-    /// </summary>
-
-    void BlocksInstantiate(int Block_n)
-    {
-        int RandBlock = Random.Range(Block_n, Blocks.Length);
-
-        Block = Instantiate(Blocks[RandBlock], BlockParent);
-
-        CurrentBlockNum = RandBlock;
-
-        int childWithSameColor = Random.Range(0, Blocks[RandBlock].childCount); // Get a random child object from blockParent
-        int iter=0;
-
-        foreach (Transform childBlock in Block)
-        {
-            MeshRenderer BlockMR = childBlock.GetComponent<MeshRenderer>();
-
-            if (iter != childWithSameColor)
-            {
-                int RandMat = Random.Range(0, MatPrefabs.Length);
-
-                BlockMR.material = MatPrefabs[RandMat];  
-            }
-            else
-            {
-                string BallMatName = Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0,1);
-
-                if (BallMatName == "b")
-                {
-                    BlockMR.material = MatPrefabs[0];
-                }
-                else if (BallMatName == "g")
-                {
-                    BlockMR.material = MatPrefabs[1];
-                }
-                else if (BallMatName == "o")
-                {
-                    BlockMR.material = MatPrefabs[2];
-                }
-                else if (BallMatName == "r")
-                {
-                    BlockMR.material = MatPrefabs[3];
-                }
-                else if (BallMatName == "y")
-                {
-                    BlockMR.material = MatPrefabs[4];
-                }
-            }
-
-            iter++;
-
-        }
-    }
-
-    /// <summary>
-    ///
     ///             Text Block Instantiate   [ LEVEL 16 ..] 
     /// 
     /// </summary>
@@ -738,19 +680,6 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
         Instr2 = true;     
     }
-    /// <summary>
-    ///
-    ///         Change Rotation Side used At LEVEL 14-15    ;;;
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator ChangeRotationSide()
-    {
-        yield return new WaitForSeconds(3);
-
-        ChangeRotSide = true;
-    }
-
 
     void LevelN()
     {

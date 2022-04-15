@@ -50,34 +50,29 @@ public class CollisionDetect : MonoBehaviour
             return;
         }
 
-
-        //  get text object
-        if (other.transform.childCount > 0)
+        if (other.transform.CompareTag("ColorObj"))
         {
-            Transform canvas = other.transform.GetChild(0);
-            Text TextGO = canvas.GetChild(0).GetComponent<Text>();
+            //  get text object
+            if (other.transform.childCount > 0)
+            {
+                Transform canvas = other.transform.GetChild(0);
+                Text TextGO = canvas.GetChild(0).GetComponent<Text>();
 
-            otherMat = TextGO.text.Substring(0, 1);
-        }
-        else
-        {
-            // or get block
-            MeshRenderer OtherMR = other.gameObject.GetComponent<MeshRenderer>();
-            otherMat = OtherMR.material.name.Substring(0, 1);
-        }
+                otherMat = TextGO.text.Substring(0, 1);
+            }
+            else
+            {
+                // or get block
+                MeshRenderer OtherMR = other.gameObject.GetComponent<MeshRenderer>();
+                otherMat = OtherMR.material.name.Substring(0, 1);
+            }
 
-        if (otherMat != "0")
-        {
             PC.InsertBalls(otherMat);
-        }
-        else
-        {
-            // you collided with obstacle like axe // GAME OVER //
 
+
+            // move obstacle behind the view so Obstacle Handler can use it
+            other.transform.parent.position = new Vector3(0, 0, -20);
         }
-        
-        // move obstacle behind the view so Obstacle Handler can use it
-        other.transform.parent.position = new Vector3(0, 0, -20);
     }
 
     private void OnTriggerExit(Collider other)
