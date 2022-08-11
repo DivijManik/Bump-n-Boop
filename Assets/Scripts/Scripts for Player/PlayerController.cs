@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     [SerializeField]
     Transform SmallIntervalBlock;
 
+    [SerializeField]
+    Transform SmallBlockParents;
+
     float TimeAddEasy = 0.7f;
     float TimeAdd = 0.6f;
     float ActualTime = 0f;
@@ -75,6 +78,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     public int totalNoOfLevels = 21;
     [HideInInspector]
     public bool UseVib = true;
+
+    GameObject TunnelObj;
 
     private void Awake()
     {
@@ -126,7 +131,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     
     void Start()
     {
-        TunnelScript.Instance.ChangeTunnelMat();
+        TunnelObj = TunnelScript.Instance.gameObject;
+        TunnelScript.Instance?.ChangeTunnelMat();
         BallPos = 0;
         for (int i = 0; i < BallSpawnNumber; i++)
         {
@@ -173,6 +179,10 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         {
             LevelText.text = "Level " + PlayerLevel.ToString();
         }
+        // for diabling tunnel
+        if (PlayerLevel % 5 == 0)
+        { TunnelObj.gameObject.SetActive(false); }
+        else { TunnelObj.gameObject.SetActive(true); }
     }
 
     void Update()
@@ -184,7 +194,9 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
         if (Balls.Count == 0)
         {
-            TunnelScript.Instance.ChangeTunnelMat();
+            
+            TunnelScript.Instance?.ChangeTunnelMat();
+
             if (PlayerLevel <= totalNoOfLevels)
             {
                 PlayerLevel++;
@@ -202,6 +214,23 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                     Destroy(Parent.GetChild(i).gameObject);
                 }
             }
+
+            // for diabling tunnel
+            if (PlayerLevel % 5 == 0)
+            { TunnelObj.gameObject.SetActive(false); }
+            else
+            {
+                TunnelObj.gameObject.SetActive(true);
+                if (SmallBlockParents.childCount > 0)
+                {
+                    foreach (Transform t in SmallBlockParents)
+                    {
+                        Destroy(t.gameObject);
+                    }
+                }
+            }
+            //...
+
             //ChangeRotSide=true;
 
             // call awake and start again to instantiate balls
@@ -222,7 +251,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         ///
         /// </summary>
 
-        if (PlayerLevel == 6)
+        if (PlayerLevel % 5 == 0)
         {
             if (Time.time > ActualTime)
             {
@@ -233,27 +262,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             }
             return;
         }
-
-        if (PlayerLevel == 19)
-        {
-            if (Time.time > ActualTime)                             //    [   for level  19    ]
-            {
-                ActualTime = Time.time + TimeAdd;
-
-                SmallIntervalBlockInstantiate();
-                
-            }
-            return;
-        }
-
-        if (PlayerLevel == 22 && Time.time > ActualTime)
-        {
-
-            ActualTime = Time.time + TimeAddEasy;
-
-            SmallIntervalBlockInstantiate();
-            return;
-        }
+        
 
         ///<summary>
         ///
@@ -583,11 +592,11 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     /// </summary>
     void SmallIntervalBlockInstantiate()
     {
-        if(BlockParent.childCount == 0)
+        if(SmallBlockParents.childCount == 0)
         {
             for (int i = 0; i < 25; i++)
             {
-                Transform SmallIntBlock_ = Instantiate(SmallIntervalBlock, new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f), Quaternion.identity, BlockParent);
+                Transform SmallIntBlock_ = Instantiate(SmallIntervalBlock, new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f), Quaternion.identity, SmallBlockParents);
 
                 MeshRenderer SIMeshRend = SmallIntBlock_.GetChild(0).GetComponent<MeshRenderer>();
 
@@ -600,7 +609,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         }
         else
         {
-            foreach(Transform t in BlockParent)
+            foreach(Transform t in SmallBlockParents)
             {
                 if (t.position.z < MainCam.position.z)
                 {
@@ -622,7 +631,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     IEnumerator InitSmallIntervalBlocks()
     {
-        foreach (Transform t in BlockParent)
+        foreach (Transform t in SmallBlockParents)
         {
             yield return new WaitForSeconds(1f);
             if (t != null)
