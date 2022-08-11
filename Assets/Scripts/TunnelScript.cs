@@ -24,6 +24,9 @@ public class TunnelScript : MonoBehaviour
     bool CoolDown;
     public static TunnelScript Instance;
 
+    [SerializeField] Color[] colors;
+    [SerializeField] Material TunnelMat;
+
     private void Awake()
     {
         if(Instance == null)
@@ -77,5 +80,12 @@ public class TunnelScript : MonoBehaviour
 
         float d = tunnelSpeed;
         DOTween.To(() => tunnelSpeed, x => tunnelSpeed = x, tunnelRealSpeed, d).OnComplete(()=> { AudioManager.Instance.BG_MusicSpeed(false); });
+    }
+
+    public void ChangeTunnelMat()
+    {
+        int f = Random.Range(0, colors.Length);
+
+        TunnelMat.color = new Color( colors[f].r, colors[f].g, colors[f].b,1);      
     }
 }

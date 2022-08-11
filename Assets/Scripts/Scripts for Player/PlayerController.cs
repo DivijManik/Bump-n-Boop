@@ -126,6 +126,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     
     void Start()
     {
+        TunnelScript.Instance.ChangeTunnelMat();
         BallPos = 0;
         for (int i = 0; i < BallSpawnNumber; i++)
         {
@@ -183,6 +184,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
         if (Balls.Count == 0)
         {
+            TunnelScript.Instance.ChangeTunnelMat();
             if (PlayerLevel <= totalNoOfLevels)
             {
                 PlayerLevel++;
