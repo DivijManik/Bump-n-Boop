@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource BgAudio;
 
+    [SerializeField] AudioSource SoundEffectsAS;
+
+    [SerializeField] AudioClip[] soundEffects;
+
     private void Awake()
     {
         if(Instance== null)
@@ -32,4 +36,18 @@ public class AudioManager : MonoBehaviour
             BgAudio.pitch = 1f;
         }
     }
+
+    public void PlaySoundEffect(Sounds s)
+    {
+        SoundEffectsAS.clip = soundEffects[(int)s];
+        SoundEffectsAS.Play();
+       
+    }
+}
+
+public enum Sounds
+{
+    ButtonClick,
+    ObstacleCollide,
+    GoodCollide
 }

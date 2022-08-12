@@ -45,6 +45,7 @@ public class CollisionDetect : MonoBehaviour
         }
         else if(other.transform.CompareTag("Obstacle"))
         {
+            AudioManager.Instance.PlaySoundEffect(Sounds.ObstacleCollide);
             PlayerController.Instance.StartGame = false;
             StartCoroutine(WaitToRestartLevel());
             return;
@@ -52,6 +53,8 @@ public class CollisionDetect : MonoBehaviour
 
         if (other.transform.CompareTag("ColorObj"))
         {
+            AudioManager.Instance.PlaySoundEffect(Sounds.GoodCollide);
+
             //  get text object
             if (other.transform.childCount > 0)
             {
