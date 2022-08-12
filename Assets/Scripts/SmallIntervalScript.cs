@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SmallIntervalScript : MonoBehaviour {
 
-	void FixedUpdate () {
+	void FixedUpdate ()
+	{
+        if (!PlayerController.Instance.StartGame) { return; }
+
 		//if(transform.position.z < -1f)
   //      {
   //          Destroy(this.transform.gameObject);
