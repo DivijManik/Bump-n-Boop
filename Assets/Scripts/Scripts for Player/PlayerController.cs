@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using GoogleMobileAds.Api;
 
 public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
@@ -81,9 +82,11 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     GameObject TunnelObj;
 
+    BannerView bannerView;// = new BannerView("ca-app-pub-9285045534177890/3505990696", AdSize.Banner, 0, 50);
+
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -96,29 +99,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         //PlayerPrefs.SetInt("Level", PlayerLevel);
         PlayerLevel = PlayerPrefs.GetInt("Level");
 
-        if (PlayerLevel < 5)
-        {
-            BallSpawnNumber = 4; // number of balls to spawn
-        }
-        else if(PlayerLevel<10)
-        {
-            if(PlayerLevel<=7)
-            {
-                BallSpawnNumber = 6;
-            }
-            else
-            {
-                BallSpawnNumber = 7;
-            }
-        }
-        else if(PlayerLevel<=15)
-        {
-            BallSpawnNumber = 8;
-        }
-        else
-        {
-            BallSpawnNumber = 10;
-        }
+
+        BallSpawnNumber = LevelManager.Instance.LevelSettings[PlayerLevel].NoOfBalls; // number of balls to spawn
 
         /*
         if (Debug.isDebugBuild)
@@ -131,6 +113,10 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     
     void Start()
     {
+        // Initialize Ads
+        MobileAds.Initialize(initStatus => { });
+        this.RequestBanner();
+
         TunnelObj = TunnelScript.Instance.gameObject;
         TunnelScript.Instance?.ChangeTunnelMat();
         BallPos = 0;
@@ -166,6 +152,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         PSysObj.parent = Balls[0];
         PSysObj.position = Balls[0].position;
 
+        // adding rigidbody to first ball
+        Balls[0].gameObject.AddComponent<Rigidbody>().useGravity = false;
         //Debug.Log(Balls.Length);
         FirstBallCol = Balls[0].gameObject.AddComponent<CollisionDetect>();
         FirstBallCol.PC = transform.GetComponent<PlayerController>();
@@ -180,9 +168,23 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             LevelText.text = "Level " + PlayerLevel.ToString();
         }
         // for diabling tunnel
-        if (PlayerLevel % 5 == 0)
+        if (PlayerLevel % 5 == 0 && PlayerLevel > 0)
         { TunnelObj.gameObject.SetActive(false); }
         else { TunnelObj.gameObject.SetActive(true); }
+    }
+
+    private void RequestBanner()
+    {
+#if UNITY_ANDROID
+            string adUnitId = "ca-app-pub-9285045534177890/3505990696";
+#elif UNITY_IPHONE
+            string adUnitId = "ca-app-pub-9285045534177890/7577931790";
+#else
+        string adUnitId = "unexpected_platform";
+#endif
+
+        // Create a 320x50 banner at the top of the screen.
+        this.bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
     }
 
     void Update()
@@ -216,7 +218,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             }
 
             // for diabling tunnel
-            if (PlayerLevel % 5 == 0)
+            if (PlayerLevel % 5 == 0 && PlayerLevel > 0)
             { TunnelObj.gameObject.SetActive(false); }
             else
             {
@@ -251,13 +253,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         ///
         /// </summary>
 
-        if (PlayerLevel % 5 == 0)
+        if (PlayerLevel % 5 == 0 && PlayerLevel>0)
         {
             if (Time.time > ActualTime)
             {
                 ActualTime = Time.time + TimeAddEasy;
 
-                SmallIntervalBlockInstantiate();
+                StartCoroutine(SmallIntervalBlockInstantiate());
                
             }
             return;
@@ -582,20 +584,26 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             iter++;
         }
     }
+    bool isStartGame()
+    {
+        return StartGame;
+    }
 
     /// <summary>
     ///
     ///                Small Interval Blocksssss
     ///                
-    ///                NOTE:these blocks are getting destroyed when ball collides FIX THAT
+    ///                NOTE:these blocks are getting destroyed when ball collides FIX THAT --- Fixed i think
     /// 
     /// </summary>
-    void SmallIntervalBlockInstantiate()
+    IEnumerator SmallIntervalBlockInstantiate()
     {
         if(SmallBlockParents.childCount == 0)
         {
             for (int i = 0; i < 25; i++)
             {
+                yield return new WaitUntil(isStartGame);
+
                 Transform SmallIntBlock_ = Instantiate(SmallIntervalBlock, new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f), Quaternion.identity, SmallBlockParents);
 
                 MeshRenderer SIMeshRend = SmallIntBlock_.GetChild(0).GetComponent<MeshRenderer>();
@@ -611,16 +619,22 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         {
             foreach(Transform t in SmallBlockParents)
             {
+                yield return new WaitUntil(isStartGame);
+
                 if (t.position.z < MainCam.position.z)
                 {
-                    SmallBlocksToBack(t);
+                    StartCoroutine(SmallBlocksToBack(t));
                 }
             }
         }
     }
 
-    public void SmallBlocksToBack(Transform t)
+
+
+    IEnumerator SmallBlocksToBack(Transform t)
     {
+        yield return new WaitUntil(isStartGame);
+
         t.position = new Vector3(Random.Range(-7f, 7f), Random.Range(-4f, 4f), 20f);
         MeshRenderer SIMeshRend = t.GetChild(0).GetComponent<MeshRenderer>();
 
@@ -629,10 +643,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         SIMeshRend.material = MatPrefabs[RandColor];
     }
 
+
+
     IEnumerator InitSmallIntervalBlocks()
     {
         foreach (Transform t in SmallBlockParents)
         {
+            yield return new WaitUntil(isStartGame);
             yield return new WaitForSeconds(1f);
             if (t != null)
             {

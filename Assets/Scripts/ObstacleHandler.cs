@@ -6,74 +6,12 @@ public class ObstacleHandler : MonoBehaviour
 {
     // Obstacle & collectibles z pos is to be 60f
     const float zPos = 60f;
-
-    // OBSTACLE PREFABS
-    [SerializeField]
-    List<Transform> level_25_Obstacles;
-
-    [SerializeField]
-    List<Transform> level_50_Obstacles;
-
-    [SerializeField]
-    List<Transform> level_100_Obstacles;
-
-    [SerializeField]
-    List<Transform> level_175_Obstacles;
-
-    [SerializeField]
-    List<Transform> level_300_Obstacles;
-    //END
-
-    [Header("Color Objects")]
-
-    // BALL STACK PREFABS
-    [SerializeField]
-    List<Transform> level_25_Col;
-
-    [SerializeField]
-    List<Transform> level_50_Col;
-
-    [SerializeField]
-    List<Transform> level_100_Col;
-
-    [SerializeField]
-    List<Transform> level_175_Col;
-
-    [SerializeField]
-    List<Transform> level_300_Col;
-    //END
     
     List<Transform> StackObstacle = new List<Transform>();
     List<Transform> StackCol = new List<Transform>();
 
     //Boost
     [SerializeField] List<Transform> Boosts = new List<Transform>();
-
-    // Stack are objects that are pooled for current round 
-    void AddToStack()
-    {
-        if(PlayerController.Instance.PlayerLevel <= 25)
-        {
-
-        }
-        else if (PlayerController.Instance.PlayerLevel <= 50)
-        {
-
-        }
-        else if(PlayerController.Instance.PlayerLevel <= 100)
-        {
-
-        }
-        else if (PlayerController.Instance.PlayerLevel <= 175)
-        {
-
-        }
-        else if (PlayerController.Instance.PlayerLevel <= 300)
-        {
-
-        }
-        
-    }
 
     private void FixedUpdate()
     {
@@ -104,61 +42,61 @@ public class ObstacleHandler : MonoBehaviour
     {
         if (Mathf.Abs(Time.time) % 2 == 0)
         {
-            switch (level)
+            //switch (level)
+            //{
+            //    case int n when (n <= 25):
+
+            Transform t;
+            int random_ = Random.Range(0, 2);
+            // OBSTACLE
+            if (random_ == 0)
             {
-                case int n when (n <= 25):
-
-                    Transform t;
-                    int random_ = Random.Range(0, 2);
-                    // OBSTACLE
-                    if (random_ == 0)
+                if (StackObstacle.Count < 25) // Instantiate only 25 objects
+                {
+                    int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].Obstacles.Length);
+                    t = Instantiate(LevelManager.Instance.LevelSettings[level].Obstacles[rand], transform);
+                    StackObstacle.Add(t);
+                }
+                else
+                {
+                    int rand = Random.Range(0, StackObstacle.Count);
+                    while (StackObstacle[rand].position.z >= -10)
                     {
-                        if (StackObstacle.Count < 25) // Instantiate only 25 objects
-                        {
-                            int rand = Random.Range(0, level_25_Obstacles.Count);
-                            t = Instantiate(level_25_Obstacles[rand], transform);
-                            StackObstacle.Add(t);
-                        }
-                        else
-                        {
-                            int rand = Random.Range(0, StackObstacle.Count);
-                            while (StackObstacle[rand].position.z >= -10)
-                            {
-                                rand = Random.Range(0, StackObstacle.Count);
-                            }
-                            t = StackObstacle[rand];
-                        }
-                    } // COLOR OBJECT
-                    else
-                    {
-                        if (StackCol.Count < 25) // Instantiate only 25 objects
-                        {
-                            int rand = Random.Range(0, level_25_Col.Count);
-                            t = Instantiate(level_25_Col[rand], transform);
-                            StackCol.Add(t);
-                        }
-                        else
-                        {
-                            int rand = Random.Range(0, StackCol.Count);
-                            while (StackCol[rand].position.z >= -10)
-                            {
-                                rand = Random.Range(0, StackCol.Count);
-                            }
-                            t = StackCol[rand];
-                        }
-                        // SET BLOCK COLOR
-                        BlocksColor(t);
+                        rand = Random.Range(0, StackObstacle.Count);
                     }
-
-                    if(t!=null)
-                        t.position = new Vector3(t.position.x,t.position.y,zPos);
-
-                    break;
-
-                case int n when (n <= 50):
-
-                    break;
+                    t = StackObstacle[rand];
+                }
+            } // COLOR OBJECT
+            else
+            {
+                if (StackCol.Count < 25) // Instantiate only 25 objects
+                {
+                    int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].ColObj.Length);
+                    t = Instantiate(LevelManager.Instance.LevelSettings[level].ColObj[rand], transform);
+                    StackCol.Add(t);
+                }
+                else
+                {
+                    int rand = Random.Range(0, StackCol.Count);
+                    while (StackCol[rand].position.z >= -10)
+                    {
+                        rand = Random.Range(0, StackCol.Count);
+                    }
+                    t = StackCol[rand];
+                }
+                // SET BLOCK COLOR
+                BlocksColor(t);
             }
+
+            if (t != null)
+                t.position = new Vector3(t.position.x, t.position.y, zPos);
+
+            //    break;
+
+            //case int n when (n <= 50):
+
+            //    break;
+            //}
         }
     }
 

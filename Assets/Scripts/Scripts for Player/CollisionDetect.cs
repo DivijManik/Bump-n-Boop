@@ -20,6 +20,13 @@ public class CollisionDetect : MonoBehaviour
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
+        else
+        {
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+
+            rb.useGravity = false;
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
 
         StartCoroutine(WaitToDetect());   // WaitToDetect()
     }
@@ -37,7 +44,8 @@ public class CollisionDetect : MonoBehaviour
 
             if (TunnelScript.Instance.TunnelSpeed == TunnelScript.Instance.tunnelRealSpeed)
             {
-                TunnelScript.Instance.TunnelSpeed = TunnelScript.Instance.tunnelRealSpeed * 2;
+                TunnelScript.Instance.TunnelSpeed = TunnelScript.Instance.tunnelRealSpeed * LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].BoostMultiplier;
+                ;
                 AudioManager.Instance.BG_MusicSpeed(true);
             }
 

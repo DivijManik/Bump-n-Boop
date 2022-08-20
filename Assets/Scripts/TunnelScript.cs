@@ -41,6 +41,16 @@ public class TunnelScript : MonoBehaviour
         tunnelSpeed = tunnelRealSpeed;
     }
 
+    private void Start()
+    {
+        SetLvlSpeed();
+    }
+
+    public void SetLvlSpeed()
+    {
+        tunnelRealSpeed = LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].speed;
+        tunnelSpeed = tunnelRealSpeed;
+    }
     void FixedUpdate()
     {
         if (PlayerController.Instance.StartGame)
@@ -84,6 +94,8 @@ public class TunnelScript : MonoBehaviour
 
     public void ChangeTunnelMat()
     {
+        SetLvlSpeed();
+
         int f = Random.Range(0, colors.Length);
 
         TunnelMat.color = new Color( colors[f].r, colors[f].g, colors[f].b,1);      
