@@ -47,7 +47,7 @@ public class CollisionDetect : MonoBehaviour
             if (TunnelScript.Instance.TunnelSpeed == TunnelScript.Instance.tunnelRealSpeed)
             {
                 TunnelScript.Instance.TunnelSpeed = TunnelScript.Instance.tunnelRealSpeed * LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].BoostMultiplier;
-                ;
+                
                 AudioManager.Instance.BG_MusicSpeed(true);
             }
             if (PlayerController.Instance.UseVib)
