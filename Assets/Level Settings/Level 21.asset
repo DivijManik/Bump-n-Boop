@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5156bd04384bfab9803538ccf418a, type: 3}
+  m_Name: Level 21
+  m_EditorClassIdentifier: 
+  NoOfBalls: 7
+  speed: -15
+  Obstacles:
+  - {fileID: 2914423133451979106, guid: adbab1db40116497c9e030927d70ffc3, type: 3}
+  ColObj:
+  - {fileID: 5000684034504325736, guid: 526226a2d78b24e7da6a16400abc8b03, type: 3}
+  ShowAd: 0
+  CubeSpawnLvl: 0
+  PlaneLevel: 0
+  NoOfGems: 5
+  LevelRewardGems: 10
+  BoostMultiplier: 2

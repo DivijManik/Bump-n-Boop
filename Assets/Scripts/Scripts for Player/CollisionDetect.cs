@@ -14,6 +14,8 @@ public class CollisionDetect : MonoBehaviour
 
     private void Start()
     {
+        Vibration.Init();
+
         if (gameObject.GetComponent<Rigidbody>() == null)
         {
             Rigidbody rb = gameObject.AddComponent<Rigidbody>();
@@ -48,7 +50,8 @@ public class CollisionDetect : MonoBehaviour
                 ;
                 AudioManager.Instance.BG_MusicSpeed(true);
             }
-
+            if (PlayerController.Instance.UseVib)
+                Vibration.VibratePeek();
             return;
         }
         else if(other.transform.CompareTag("Obstacle"))
@@ -56,6 +59,10 @@ public class CollisionDetect : MonoBehaviour
             AudioManager.Instance.PlaySoundEffect(Sounds.ObstacleCollide);
             PlayerController.Instance.StartGame = false;
             StartCoroutine(WaitToRestartLevel());
+
+            if (PlayerController.Instance.UseVib)
+                Vibration.VibrateNope();
+
             return;
         }
 
@@ -83,6 +90,11 @@ public class CollisionDetect : MonoBehaviour
 
             // move obstacle behind the view so Obstacle Handler can use it
             other.transform.parent.position = new Vector3(0, 0, -20);
+
+            if (PlayerController.Instance.UseVib)
+            {
+                Vibration.VibratePop();
+            }
         }
     }
 

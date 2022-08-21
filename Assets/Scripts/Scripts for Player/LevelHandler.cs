@@ -81,3 +81,5 @@ public class LevelHandler : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+
+// Line number => 50, 66, 71 commented for testing
