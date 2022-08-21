@@ -170,9 +170,11 @@ public class ObstacleHandler : MonoBehaviour
 
     public void DestroyLastLevelObstacles()
     {
+        StackCol.Clear();
+        StackObstacle.Clear();
+
         foreach(Transform t in transform)
         {
-            StackCol.Remove(t);
             Destroy(t.gameObject);
         }
     }
