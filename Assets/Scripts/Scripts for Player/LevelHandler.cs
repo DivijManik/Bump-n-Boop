@@ -32,7 +32,7 @@ public class LevelHandler : MonoBehaviour
            currentLvl = PlayerPrefs.GetInt("CurrenLvl");
         }
 
-        for (int i = 0; i < PlayerController.Instance.totalNoOfLevels; i++)
+        for (int i = 0; i < LevelManager.Instance.LevelSettings.Length; i++)
         {
             Transform t = Instantiate(levelPrefab, levelGrid);
             t.position = new Vector3(0, -i * 300, 0);
@@ -53,9 +53,9 @@ public class LevelHandler : MonoBehaviour
                 tChild.GetComponent<Image>().sprite = levelOpenImg;
             }
         }
-        levelGrid.GetComponent<RectTransform>().sizeDelta = new Vector2(1172, PlayerController.Instance.totalNoOfLevels/3 * 350);
+        levelGrid.GetComponent<RectTransform>().sizeDelta = new Vector2(1172, LevelManager.Instance.LevelSettings.Length / 3 * 350);
 
-        Debug.Log(PlayerController.Instance.totalNoOfLevels % 3 * 350);
+        Debug.Log(LevelManager.Instance.LevelSettings.Length % 3 * 350);
     }
 
     private void OnLevelClicked(int i)

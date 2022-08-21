@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd5156bd04384bfab9803538ccf418a, type: 3}
-  m_Name: Level 12
+  m_Name: Level 17
   m_EditorClassIdentifier: 
-  NoOfBalls: 8
-  speed: -13
+  NoOfBalls: 10
+  speed: -18
   Obstacles:
-  - {fileID: 8758064751354247712, guid: 0c5c258b02bf5448c91b45fbdf25716f, type: 3}
-  - {fileID: 5188496941963450563, guid: cbb92bfb72f8c4605a00bb0b109ac626, type: 3}
+  - {fileID: 8388101977599716590, guid: 4e966a3d4c2fa4657aceb588d3b08e5e, type: 3}
   - {fileID: 3141258531841798122, guid: 985a9631fa84a4862ac6ca56d91c1a5b, type: 3}
   - {fileID: 2999305146635313423, guid: e6d2f6d8ed99d476c845f0289dea2be1, type: 3}
+  - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
   ColObj:
   - {fileID: 1012702140631686582, guid: 0138f7df38a014dbeab20b99ed73af43, type: 3}
   - {fileID: 354704000619045681, guid: 65d26d699f96441e8bc754354e180e4f, type: 3}
+  - {fileID: 4603033963573697465, guid: 385d278f77ec0426881e100183019726, type: 3}
   ShowAd: 0
   CubeSpawnLvl: 0
   PlaneLevel: 0
   NoOfGems: 5
   LevelRewardGems: 10
-  BoostMultiplier: 2.3
+  BoostMultiplier: 1.7

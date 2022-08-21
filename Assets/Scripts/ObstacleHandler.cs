@@ -113,6 +113,7 @@ public class ObstacleHandler : MonoBehaviour
         int childWithSameColor = Random.Range(0, Blocks.childCount); // Get a random child object from blockParent
 
         int iter = 0;
+        string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
 
         foreach (Transform childBlock in Blocks)
         {
@@ -121,13 +122,16 @@ public class ObstacleHandler : MonoBehaviour
             if (iter != childWithSameColor)
             {
                 int RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
-
                 BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
+
+                while (PlayerController.Instance.MatPrefabs[RandMat].name.Substring(0, 1) == BallMatName)
+                {
+                    RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
+                    BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
+                }
             }
             else
             {
-                string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
-
                 BlockMR.material = MatName(BallMatName);
             }
             //else
