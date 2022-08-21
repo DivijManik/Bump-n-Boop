@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     BannerView bannerView;// = new BannerView("ca-app-pub-9285045534177890/3505990696", AdSize.Banner, 0, 50);
 
+    [SerializeField] ObstacleHandler obstacleHandler;
+
     private void Awake()
     {
         if (Instance == null)
@@ -191,6 +193,12 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         this.bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
     }
 
+
+    /// <summary>
+    ///
+    ///                     Update
+    /// 
+    /// </summary>
     void Update()
     {
         if (StartGame == false || Instruction1.activeInHierarchy==true || Instruction2.activeInHierarchy == true)
@@ -202,6 +210,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         {
             
             TunnelScript.Instance?.ChangeTunnelMat();
+
+            obstacleHandler.DestroyLastLevelObstacles();
 
             if (PlayerLevel <= totalNoOfLevels)
             {
@@ -670,6 +680,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
    
     IEnumerator Instr2Active()  
     {
+        yield return new WaitUntil(isStartGame);
         yield return new WaitForSeconds(3);
 
         Instr2 = true;     
