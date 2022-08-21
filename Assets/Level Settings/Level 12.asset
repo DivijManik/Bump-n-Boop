@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 12
   m_EditorClassIdentifier: 
   NoOfBalls: 10
-  speed: -15
+  speed: -13
   Obstacles:
   - {fileID: 8758064751354247712, guid: 0c5c258b02bf5448c91b45fbdf25716f, type: 3}
   - {fileID: 5188496941963450563, guid: cbb92bfb72f8c4605a00bb0b109ac626, type: 3}
@@ -27,4 +27,4 @@ MonoBehaviour:
   PlaneLevel: 0
   NoOfGems: 5
   LevelRewardGems: 10
-  BoostMultiplier: 2
+  BoostMultiplier: 2.3

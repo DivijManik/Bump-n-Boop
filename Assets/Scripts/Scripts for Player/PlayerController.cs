@@ -100,15 +100,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         PlayerLevel = PlayerPrefs.GetInt("Level");
 
 
-        BallSpawnNumber = LevelManager.Instance.LevelSettings[PlayerLevel].NoOfBalls; // number of balls to spawn
-
         /*
         if (Debug.isDebugBuild)
         {
             Debug.Log("This is a debug build!");
         }
         */
-        
+
     }
     
     void Start()
@@ -117,6 +115,12 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         MobileAds.Initialize(initStatus => { });
         this.RequestBanner();
 
+        // set ball spwn count & no of lvls
+        BallSpawnNumber = LevelManager.Instance.LevelSettings[PlayerLevel].NoOfBalls; // number of balls to spawn
+        totalNoOfLevels = LevelManager.Instance.LevelSettings.Length;
+        // end..
+
+        //
         TunnelObj = TunnelScript.Instance.gameObject;
         TunnelScript.Instance?.ChangeTunnelMat();
         BallPos = 0;

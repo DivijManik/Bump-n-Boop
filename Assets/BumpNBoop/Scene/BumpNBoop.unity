@@ -5813,6 +5813,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9eb82caacf9c449dfa384df057a7d4ea, type: 2}
   - {fileID: 11400000, guid: 3ca5eee7480514420bd3e392cb07a31c, type: 2}
   - {fileID: 11400000, guid: 694711b703d3c40e687e33f4643235c4, type: 2}
+  - {fileID: 11400000, guid: 35fea6e75bb244971b92e0331c5929f8, type: 2}
+  - {fileID: 11400000, guid: ae61714b19e814cf7ad394d828286f02, type: 2}
+  - {fileID: 11400000, guid: 6afe13686ae904385a7cdb2d877fbf56, type: 2}
+  - {fileID: 11400000, guid: 444f14327bef34dc181f7a6128372786, type: 2}
+  - {fileID: 11400000, guid: 5de78cae6ef5e48a19f0f5a332f6529d, type: 2}
+  - {fileID: 11400000, guid: 1a90506ce63d34f72ae6477ac67b5ca3, type: 2}
+  - {fileID: 11400000, guid: 93251551b44ad47f0a832f5c1fb6f84c, type: 2}
+  - {fileID: 11400000, guid: 4e54150b05fc24eaba4fa5cad591155f, type: 2}
   PlayerLevel: 0
 --- !u!1 &285176310
 GameObject:
