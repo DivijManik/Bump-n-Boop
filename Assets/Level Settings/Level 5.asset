@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd5156bd04384bfab9803538ccf418a, type: 3}
   m_Name: Level 5
   m_EditorClassIdentifier: 
-  NoOfBalls: 5
-  speed: -8
+  NoOfBalls: 7
+  speed: -10
   Obstacles:
-  - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
-  - {fileID: 8388101977599716590, guid: 4e966a3d4c2fa4657aceb588d3b08e5e, type: 3}
+  - {fileID: 6468531485718817854, guid: c0eaf8c65a6ad478c85e5dcf7c940439, type: 3}
+  - {fileID: 6468531485718817854, guid: abf7a1fac883b477eb7ad9dd8787bd80, type: 3}
   ColObj:
   - {fileID: 4603033963573697465, guid: e2e99990b9f624375b953cf4637f26fd, type: 3}
   ShowAd: 0
-  CubeSpawnLvl: 0
+  CubeSpawnLvl: 1
   PlaneLevel: 0
   NoOfGems: 5
   LevelRewardGems: 10
-  BoostMultiplier: 1.3
+  BoostMultiplier: 2

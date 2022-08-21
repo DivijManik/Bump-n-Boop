@@ -56,6 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,6 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &35681427014272655
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -103,6 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5878617388953466250}
+  - component: {fileID: 7272310892109502013}
   m_Layer: 0
   m_Name: TwoSemis
   m_TagString: Untagged
@@ -117,15 +120,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6547912744659660592}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.29314798, y: 0.6434783, z: 0.6434783, w: 0.29314798}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.599767, y: 2.5, z: 7.599767}
+  m_LocalScale: {x: 7.599767, y: 3.31, z: 7.599767}
   m_Children:
   - {fileID: 730998936994252880}
   - {fileID: 836679245103120560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -41.015, y: 90, z: 90}
+--- !u!114 &7272310892109502013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547912744659660592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdcc14167dd7473d967ab1801c5c41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EulerAngles:
+  - {x: 90, y: 0, z: 0}
+  - {x: 49.89207, y: 90, z: 90}
+  - {x: 354.47583, y: 90, z: 90}
+  - {x: 318.98495, y: 90, z: 90}
 --- !u!1 &7252653276145327201
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +202,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -206,6 +227,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &8952154456716622970
 MeshCollider:
   m_ObjectHideFlags: 0

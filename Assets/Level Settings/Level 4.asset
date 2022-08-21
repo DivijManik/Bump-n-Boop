@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Level 4
   m_EditorClassIdentifier: 
   NoOfBalls: 5
-  speed: -8
+  speed: -10
   Obstacles:
   - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
-  - {fileID: 8388101977599716590, guid: 4e966a3d4c2fa4657aceb588d3b08e5e, type: 3}
+  - {fileID: 6468531485718817854, guid: abf7a1fac883b477eb7ad9dd8787bd80, type: 3}
   ColObj:
-  - {fileID: 5878617388953466250, guid: 7e89f1881d78d4add9fa15c5c21ff736, type: 3}
+  - {fileID: 4603033963573697465, guid: e2e99990b9f624375b953cf4637f26fd, type: 3}
   ShowAd: 0
   CubeSpawnLvl: 0
   PlaneLevel: 0
   NoOfGems: 5
   LevelRewardGems: 10
-  BoostMultiplier: 1.25
+  BoostMultiplier: 2

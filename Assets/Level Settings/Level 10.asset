@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5156bd04384bfab9803538ccf418a, type: 3}
+  m_Name: Level 10
+  m_EditorClassIdentifier: 
+  NoOfBalls: 10
+  speed: -15
+  Obstacles:
+  - {fileID: 6468531485718817854, guid: c0eaf8c65a6ad478c85e5dcf7c940439, type: 3}
+  - {fileID: 6468531485718817854, guid: abf7a1fac883b477eb7ad9dd8787bd80, type: 3}
+  - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
+  - {fileID: 8388101977599716590, guid: 4e966a3d4c2fa4657aceb588d3b08e5e, type: 3}
+  ColObj:
+  - {fileID: 4603033963573697465, guid: e2e99990b9f624375b953cf4637f26fd, type: 3}
+  - {fileID: 5878617388953466250, guid: 7e89f1881d78d4add9fa15c5c21ff736, type: 3}
+  ShowAd: 1
+  CubeSpawnLvl: 1
+  PlaneLevel: 0
+  NoOfGems: 5
+  LevelRewardGems: 10
+  BoostMultiplier: 1.8
