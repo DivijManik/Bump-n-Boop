@@ -30,7 +30,7 @@ public class ObstacleHandler : MonoBehaviour
     // BOOST 
     void BoostForPlayer()
     {
-        if (Mathf.Abs(Time.time) % 5 == 0)
+        if (Mathf.Abs(Time.time) % 6 == 0)
         {
             int rand = Random.Range(0, Boosts.Count - 1);
 

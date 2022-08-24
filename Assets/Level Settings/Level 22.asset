@@ -17,6 +17,7 @@ MonoBehaviour:
   Obstacles:
   - {fileID: 2914423133451979106, guid: adbab1db40116497c9e030927d70ffc3, type: 3}
   - {fileID: 2914423133451979106, guid: 1ec9bda79b762423ea36a0deaaa4dcbd, type: 3}
+  - {fileID: 6597533305890262185, guid: 47b58ac8fee26427eb54c4310ee66a0f, type: 3}
   ColObj:
   - {fileID: 5000684034504325736, guid: 526226a2d78b24e7da6a16400abc8b03, type: 3}
   ShowAd: 0
