@@ -377,7 +377,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                     Vector3 ToPos = new Vector3(Balls[i - 1].transform.position.x, Balls[i - 1].transform.position.y, Balls[i - 1].transform.position.z - 1.1f);
                     //Vector3 ToPosz = new Vector3(Balls[i].transform.position.x, Balls[i].transform.position.y, Balls[i - 1].transform.position.z - 1.1f);
 
-                    Balls[i].transform.position = Vector3.Slerp(Balls[i].transform.position, ToPos, 1f / Mathf.Abs(10 - i));
+                    Balls[i].transform.position = Vector3.Slerp(Balls[i].transform.position, ToPos, 1f / Mathf.Abs(7 - i));
                     //Balls[i].transform.position = Vector3.Slerp(Balls[i].transform.position, ToPos, 1f);
                 }
             }

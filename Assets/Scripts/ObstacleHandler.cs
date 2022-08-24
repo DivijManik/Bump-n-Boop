@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+using Random = UnityEngine.Random;
 
 public class ObstacleHandler : MonoBehaviour
 {
@@ -12,6 +15,8 @@ public class ObstacleHandler : MonoBehaviour
 
     //Boost
     [SerializeField] List<Transform> Boosts = new List<Transform>();
+
+    Transform LastObj;
 
     private void FixedUpdate()
     {
@@ -46,57 +51,89 @@ public class ObstacleHandler : MonoBehaviour
             //{
             //    case int n when (n <= 25):
 
-            Transform t;
-            int random_ = Random.Range(0, 2);
-            // OBSTACLE
-            if (random_ == 0)
+            for (int i = 0; i < 3; i++)
             {
-                if (StackObstacle.Count < 25) // Instantiate only 25 objects
+
+                Transform t = null;
+                int random_ = Random.Range(0, 2);
+                // OBSTACLE
+                if (random_ == 0)
                 {
-                    int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].Obstacles.Length);
-                    t = Instantiate(LevelManager.Instance.LevelSettings[level].Obstacles[rand], transform);
-                    StackObstacle.Add(t);
-                }
+                    if (StackObstacle.Count < 25) // Instantiate only 25 objects
+                    {
+                        int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].Obstacles.Length);
+                        t = Instantiate(LevelManager.Instance.LevelSettings[level].Obstacles[rand], transform);
+                        StackObstacle.Add(t);
+                    }
+                    else
+                    {
+                        Transform[] t_ = StackObstacle.Where(x => x.position.z <= -10).ToArray();
+
+                        if (t_.Length > 0)
+                        {
+                            int rand = Random.Range(0, t_.Length);
+                            while (t_[rand].position.z >= -10)
+                            {
+                                rand = Random.Range(0, t_.Length);
+                            }
+                            t = t_[rand];
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                } // COLOR OBJECT
                 else
                 {
-                    int rand = Random.Range(0, StackObstacle.Count);
-                    while (StackObstacle[rand].position.z >= -10)
+                    if (StackCol.Count < 25) // Instantiate only 25 objects
                     {
-                        rand = Random.Range(0, StackObstacle.Count);
+                        int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].ColObj.Length);
+                        t = Instantiate(LevelManager.Instance.LevelSettings[level].ColObj[rand], transform);
+                        StackCol.Add(t);
                     }
-                    t = StackObstacle[rand];
-                }
-            } // COLOR OBJECT
-            else
-            {
-                if (StackCol.Count < 25) // Instantiate only 25 objects
-                {
-                    int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].ColObj.Length);
-                    t = Instantiate(LevelManager.Instance.LevelSettings[level].ColObj[rand], transform);
-                    StackCol.Add(t);
-                }
-                else
-                {
-                    int rand = Random.Range(0, StackCol.Count);
-                    while (StackCol[rand].position.z >= -10)
+                    else
                     {
-                        rand = Random.Range(0, StackCol.Count);
+                        Transform[] t_= StackCol.Where(x => x.position.z <= -10).ToArray();
+
+                        if (t_.Length > 0)
+                        {
+                            int rand = Random.Range(0, t_.Length);
+                            while (t_[rand].position.z >= -10)
+                            {
+                                rand = Random.Range(0, t_.Length);
+                            }
+                            t = t_[rand];
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    t = StackCol[rand];
+                    // SET BLOCK COLOR
+                    if(t!=null)
+                        BlocksColor(t);
                 }
-                // SET BLOCK COLOR
-                BlocksColor(t);
+
+                if (t != null)
+                {
+                    if (LastObj != null)
+                    {
+                        t.position = new Vector3(t.position.x, t.position.y, LastObj.position.z + zPos);
+                    }
+                    else
+                    {
+                        t.position = new Vector3(t.position.x, t.position.y, zPos);
+                    }
+                    LastObj = t;
+                }
+                //    break;
+
+                //case int n when (n <= 50):
+
+                //    break;
+                //}
             }
-
-            if (t != null)
-                t.position = new Vector3(t.position.x, t.position.y, zPos);
-
-            //    break;
-
-            //case int n when (n <= 50):
-
-            //    break;
-            //}
         }
     }
 
@@ -174,6 +211,7 @@ public class ObstacleHandler : MonoBehaviour
 
     public void DestroyLastLevelObstacles()
     {
+        LastObj = null;
         StackCol.Clear();
         StackObstacle.Clear();
 
