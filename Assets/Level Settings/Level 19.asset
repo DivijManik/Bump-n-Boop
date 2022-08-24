@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
   - {fileID: 8758064751354247712, guid: 0c5c258b02bf5448c91b45fbdf25716f, type: 3}
   - {fileID: 5188496941963450563, guid: cbb92bfb72f8c4605a00bb0b109ac626, type: 3}
+  - {fileID: 2152707858159295421, guid: cf0d9a924c855460baef1f02394aee88, type: 3}
   ColObj:
   - {fileID: 1012702140631686582, guid: 0138f7df38a014dbeab20b99ed73af43, type: 3}
   - {fileID: 354704000619045681, guid: 65d26d699f96441e8bc754354e180e4f, type: 3}

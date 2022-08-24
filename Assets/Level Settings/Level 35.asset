@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd5156bd04384bfab9803538ccf418a, type: 3}
-  m_Name: Level 28
+  m_Name: Level 35
   m_EditorClassIdentifier: 
-  NoOfBalls: 12
-  speed: -22
+  NoOfBalls: 11
+  speed: -20
   Obstacles:
-  - {fileID: 6597533305890262185, guid: 47b58ac8fee26427eb54c4310ee66a0f, type: 3}
-  - {fileID: 2914423133451979106, guid: 084a9139d7e544775b950b9732de55c5, type: 3}
-  - {fileID: 7992966958414349006, guid: 0d256594f5e5142baab69965598b2b8e, type: 3}
+  - {fileID: 489734966845834841, guid: ad6c32996499c4f29a50bb978b8a3f4e, type: 3}
+  - {fileID: 489734966845834841, guid: 914b53e018a084d449c81aca6a0fec76, type: 3}
   ColObj:
-  - {fileID: 1012702140631686582, guid: 0138f7df38a014dbeab20b99ed73af43, type: 3}
   - {fileID: 354704000619045681, guid: 65d26d699f96441e8bc754354e180e4f, type: 3}
-  - {fileID: 4603033963573697465, guid: 385d278f77ec0426881e100183019726, type: 3}
-  - {fileID: 5000684034504325736, guid: b7e3e776810774421a7a8310996dd143, type: 3}
+  - {fileID: 7233139648150728865, guid: 8d01630a389f64563a1378de567f601f, type: 3}
+  - {fileID: 7211157141967506207, guid: ad0d25548006d4bf9b5b9348d3449249, type: 3}
   ShowAd: 0
-  CubeSpawnLvl: 0
+  CubeSpawnLvl: 1
   PlaneLevel: 0
   NoOfGems: 5
   LevelRewardGems: 10
