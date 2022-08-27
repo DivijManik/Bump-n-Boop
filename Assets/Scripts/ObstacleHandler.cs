@@ -23,7 +23,23 @@ public class ObstacleHandler : MonoBehaviour
         if (PlayerController.Instance.StartGame)
         {
             BoostForPlayer();
-            Obstacles(PlayerController.Instance.PlayerLevel);
+            int lvl = PlayerController.Instance.PlayerLevel;
+
+            switch (LevelManager.Instance.LevelSettings[lvl].Mode)
+            {
+                case LevelMode.Normal:
+
+                    Obstacles(lvl);
+
+                    break;
+                case LevelMode.Spiral:
+
+                    Spiral_Obstacles(lvl);
+
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -72,10 +88,10 @@ public class ObstacleHandler : MonoBehaviour
                         if (t_.Length > 0)
                         {
                             int rand = Random.Range(0, t_.Length);
-                            while (t_[rand].position.z >= -10)
-                            {
-                                rand = Random.Range(0, t_.Length);
-                            }
+                            //while (t_[rand].position.z >= -10)
+                            //{
+                            //    rand = Random.Range(0, t_.Length);
+                            //}
                             t = t_[rand];
                         }
                         else
@@ -99,10 +115,10 @@ public class ObstacleHandler : MonoBehaviour
                         if (t_.Length > 0)
                         {
                             int rand = Random.Range(0, t_.Length);
-                            while (t_[rand].position.z >= -10)
-                            {
-                                rand = Random.Range(0, t_.Length);
-                            }
+                            //while (t_[rand].position.z >= -10)
+                            //{
+                            //    rand = Random.Range(0, t_.Length);
+                            //}
                             t = t_[rand];
                         }
                         else
@@ -120,6 +136,11 @@ public class ObstacleHandler : MonoBehaviour
                     if (LastObj != null)
                     {
                         t.position = new Vector3(t.position.x, t.position.y, LastObj.position.z + zPos);
+
+                        //if (LevelManager.Instance.LevelSettings[level].Mode == LevelMode.Spiral)
+                        //{
+                        //    t.eulerAngles = new Vector3(0, 0, LastObj.eulerAngles.z + 10f);
+                        //}
                     }
                     else
                     {
@@ -221,4 +242,152 @@ public class ObstacleHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///
+    ///
+    ///                             Spiral levels > 50 level
+    ///
+    /// 
+    /// </summary>
+    /// <param name="level"></param>
+    void Spiral_Obstacles(int level)
+    {
+        if (Mathf.Abs(Time.time) % 0.5 == 0)
+        {
+            //switch (level)
+            //{
+            //    case int n when (n <= 25):
+
+            for (int i = 0; i < 3; i++)
+            {
+
+                Transform t = null;
+                int random_ = Random.Range(0, 2);
+                // OBSTACLE
+                if (random_ == 0)
+                {
+                    if (StackObstacle.Count < 40) // Instantiate only 25 objects
+                    {
+                        int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].Obstacles.Length);
+                        t = Instantiate(LevelManager.Instance.LevelSettings[level].Obstacles[rand], transform);
+                        StackObstacle.Add(t);
+                    }
+                    else
+                    {
+                        Transform[] t_ = StackObstacle.Where(x => x.position.z <= -10).ToArray();
+
+                        if (t_.Length > 0)
+                        {
+                            int rand = Random.Range(0, t_.Length);
+                            //while (t_[rand].position.z >= -10)
+                            {
+                                //rand = Random.Range(0, t_.Length);
+                            }
+                            t = t_[rand];
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                } // COLOR OBJECT
+                else
+                {
+                    if (StackCol.Count < 40) // Instantiate only 25 objects
+                    {
+                        int rand = Random.Range(0, LevelManager.Instance.LevelSettings[level].ColObj.Length);
+                        t = Instantiate(LevelManager.Instance.LevelSettings[level].ColObj[rand], transform);
+                        StackCol.Add(t);
+                    }
+                    else
+                    {
+                        Transform[] t_ = StackCol.Where(x => x.position.z <= -10).ToArray();
+
+                        if (t_.Length > 0)
+                        {
+                            int rand = Random.Range(0, t_.Length);
+                            //while (t_[rand].position.z >= -10)
+                            {
+                                //rand = Random.Range(0, t_.Length);
+                            }
+                            t = t_[rand];
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    // SET BLOCK COLOR
+                    if (t != null)
+                        SpiralBlockColor(t);
+                }
+
+                if (t != null)
+                {
+                    if (LastObj != null)
+                    {
+                        t.position = new Vector3(t.position.x, t.position.y, LastObj.position.z + 10);
+
+
+                        t.eulerAngles = new Vector3(0, 0, LastObj.eulerAngles.z + 5f);
+                    }
+                    else
+                    {
+                        t.position = new Vector3(t.position.x, t.position.y, zPos);
+                    }
+                    LastObj = t;
+                }
+                //    break;
+
+                //case int n when (n <= 50):
+
+                //    break;
+                //}
+            }
+        }
+    }
+
+    void SpiralBlockColor(Transform Blocks)
+    {
+            int childWithSameColor = Random.Range(0, 2); // ..
+
+            int iter = 0;
+            string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+            foreach (Transform childBlock in Blocks)
+            {
+                MeshRenderer BlockMR = childBlock.GetComponent<MeshRenderer>();
+
+                if (childWithSameColor == 1)
+                {
+                    int RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
+                    BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
+
+                    while (PlayerController.Instance.MatPrefabs[RandMat].name.Substring(0, 1) == BallMatName)
+                    {
+                        RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
+                        BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
+                    }
+                }
+                else
+                {
+                    BlockMR.material = MatName(BallMatName);
+                }
+                //else
+                //{
+                //    string BallMatName = PlayerController.Instance.Balls[1].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+                //    BlockMR.material = MatName(BallMatName);
+                //}
+
+                iter++;
+
+            }
+        }
+}
+
+public enum LevelMode
+{
+    Normal,
+    Spiral
 }

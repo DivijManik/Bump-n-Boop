@@ -60,22 +60,28 @@
     <Compile Include="Assets/Extra Assets/Fonts/Script/scriptTexttest.cs" />
     <Compile Include="Assets/BumpNBoop/Scripts for UI/SkinsHandler.cs" />
     <Compile Include="Assets/Scripts/TunnelScript.cs" />
+    <Compile Include="Assets/Scripts/LevelScriptable.cs" />
     <Compile Include="Assets/Scripts/Managers/AudioManager.cs" />
+    <Compile Include="Assets/Scripts/Managers/LevelManager.cs" />
     <Compile Include="Assets/Scripts/Scripts for Player/LevelHandler.cs" />
     <Compile Include="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" />
     <Compile Include="Assets/Scripts/Scripts for Player/PlayerController.cs" />
     <Compile Include="Assets/Extra scene/P2/MeshScript.cs" />
+    <Compile Include="Assets/Scripts/ObjRotattionScript.cs" />
     <Compile Include="Assets/Scripts/SmallIntervalScript.cs" />
     <Compile Include="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" />
     <Compile Include="Assets/Scripts/ObstacleHandler.cs" />
     <Compile Include="Assets/Extra Assets/Imphenzia/GradientSky/Scripts/Common/GradientSkyCommon.cs" />
+    <Compile Include="Assets/Scripts/BackgroundColorScript.cs" />
+    <Compile Include="Assets/Vibration/Example/VibrationExample.cs" />
     <Compile Include="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" />
     <Compile Include="Assets/Extra scene/P1/trigger_evt.cs" />
     <Compile Include="Assets/Extra Assets/Imphenzia/GradientSky/Scripts/GradientSkyCamera.cs" />
+    <Compile Include="Assets/Vibration/Vibration.cs" />
     <Compile Include="Assets/Scripts/Scripts for Player/CollisionDetect.cs" />
+    <Compile Include="Assets/Scripts/HideObjectMeshScript.cs" />
     <Compile Include="Assets/Extra scene/P2/CreateMesh.cs" />
-    <Compile Include="Assets/Scripts/LevelScriptable.cs" />
-    <Compile Include="Assets/LevelManager.cs" />
+    <Compile Include="Assets/Scripts/ObjScaleScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Extra Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" />
@@ -332,6 +338,12 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>/Applications/Unity/Hub/Editor/2020.3.29f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Assets/GoogleMobileAds/GoogleMobileAds.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
@@ -341,17 +353,11 @@
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
     <Reference Include="GoogleMobileAds.Core">
       <HintPath>Assets/GoogleMobileAds/GoogleMobileAds.Core.dll</HintPath>
     </Reference>
-    <Reference Include="GoogleMobileAds">
-      <HintPath>Assets/GoogleMobileAds/GoogleMobileAds.dll</HintPath>
-    </Reference>
-    <Reference Include="GoogleMobileAds.Unity">
-      <HintPath>Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll</HintPath>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="GoogleMobileAds.Common">
       <HintPath>Assets/GoogleMobileAds/GoogleMobileAds.Common.dll</HintPath>

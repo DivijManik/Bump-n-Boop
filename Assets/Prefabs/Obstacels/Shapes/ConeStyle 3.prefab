@@ -73,10 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjsToScale:
   - {fileID: 90452589443650330}
-  - {fileID: 0}
   - {fileID: 90452589454012712}
   - {fileID: 90452589184320245}
-  - {fileID: 0}
   - {fileID: 90452589343371611}
   - {fileID: 90452590369896124}
   ScaleValue: {x: 1, y: 1, z: 3.3253782}

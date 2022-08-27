@@ -32,7 +32,7 @@ public class LevelHandler : MonoBehaviour
            currentLvl = PlayerPrefs.GetInt("CurrenLvl");
         }
 
-        for (int i = 0; i < LevelManager.Instance.LevelSettings.Length; i++)
+        for (int i = 0; i < LevelManager.Instance.LevelSettings.Length-1; i++)
         {
             Transform t = Instantiate(levelPrefab, levelGrid);
             t.position = new Vector3(0, -i * 300, 0);
@@ -47,13 +47,13 @@ public class LevelHandler : MonoBehaviour
                 t.GetComponent<Button>().onClick.AddListener(delegate { OnPlayingLvlClicked(); });
                 tChild.GetComponent<Image>().sprite = levelOpenImg;
             }
-            else if(f<= currentLvl)
+            //else if(f<= currentLvl)
             {
                 t.GetComponent<Button>().onClick.AddListener(delegate { OnLevelClicked(f); });
                 tChild.GetComponent<Image>().sprite = levelOpenImg;
             }
         }
-        levelGrid.GetComponent<RectTransform>().sizeDelta = new Vector2(1172, LevelManager.Instance.LevelSettings.Length / 3 * 350);
+        levelGrid.GetComponent<RectTransform>().sizeDelta = new Vector2(1172,(LevelManager.Instance.LevelSettings.Length-1) / 3 * 350);
 
         Debug.Log(LevelManager.Instance.LevelSettings.Length % 3 * 350);
     }
@@ -63,12 +63,12 @@ public class LevelHandler : MonoBehaviour
         int lvl = PlayerPrefs.GetInt("Level");
         int currentLvl = PlayerPrefs.GetInt("CurrenLvl");
 
-        if (lvl > currentLvl)
+        //if (lvl > currentLvl)
         {
             PlayerPrefs.SetInt("CurrenLvl", lvl);
         }
 
-        if (i <= currentLvl)
+        //if (i <= currentLvl)
         {
             PlayerPrefs.SetInt("Level", i);
             SceneManager.LoadScene(0);

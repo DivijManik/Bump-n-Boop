@@ -1,45 +1,37 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ac23c56c-bce6-4952-b199-42e994971a34" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ObjScaleScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/TunnelScript.cs" Line="74" Column="6" />
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="69" Column="22" />
-      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="171" Column="19" />
-      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="55" Column="32" />
-      <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="16" Column="48" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="63" Column="52" />
+      <File FileName="Assets/Scripts/TunnelScript.cs" Line="94" Column="1" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="384" Column="10" />
+      <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="32" Column="6" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="48" Column="14" />
+      <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="45" Column="6" />
+      <File FileName="Assets/Vibration/Vibration.cs" Line="49" Column="24" />
+      <File FileName="Assets/Scripts/Scripts for Player/LevelHandler.cs" Line="84" Column="1" />
+      <File FileName="Assets/Scripts/ObjRotattionScript.cs" Line="46" Column="73" />
+      <File FileName="Assets/Scripts/ObjScaleScript.cs" Line="29" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Bump-n-Boop" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="BumpNBoop" expanded="True">
-                <Node name="Scripts for UI" expanded="True" />
-              </Node>
-              <Node name="Plugins" expanded="True">
-                <Node name="Demigiant" expanded="True">
-                  <Node name="DOTween" expanded="True">
-                    <Node name="Modules" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="Managers" expanded="True" />
-                <Node name="Scripts for Player" expanded="True">
-                  <Node name="PlayerController.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="Bump-n-Boop" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f10df434-c883-4677-be77-0f597938eac4" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

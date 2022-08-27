@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionDetect : MonoBehaviour
 {
-    bool DetecCollision = false;
+    bool DetecCollision = true;
 
     public PlayerController PC;
 
@@ -21,6 +21,7 @@ public class CollisionDetect : MonoBehaviour
             Rigidbody rb = gameObject.AddComponent<Rigidbody>();
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         }
         else
         {
@@ -28,19 +29,16 @@ public class CollisionDetect : MonoBehaviour
 
             rb.useGravity = false;
             rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         }
 
-        StartCoroutine(WaitToDetect());   // WaitToDetect()
+        //StartCoroutine(WaitToDetect());   // WaitToDetect()
     }
 
     // FOr Obstacles
     private void OnTriggerEnter(Collider other)
     {
-        if (DetecCollision == false || other.transform.CompareTag("Player"))
-        {
-            return;
-        }
-        else if(other.transform.CompareTag("Boost"))
+        if(other.transform.CompareTag("Boost"))
         {
             TunnelScript.Instance.StopCooldown();
 
@@ -106,12 +104,12 @@ public class CollisionDetect : MonoBehaviour
         }
     }
 
-    IEnumerator WaitToDetect()
-    {
-        yield return new WaitForSeconds(1);
+    //IEnumerator WaitToDetect()
+    //{
+    //    yield return new WaitForSeconds(1);
 
-        DetecCollision = true;
-    }
+    //    DetecCollision = true;
+    //}
     IEnumerator WaitToRestartLevel()
     {
         AudioManager.Instance.BG_MusicSpeed(false);

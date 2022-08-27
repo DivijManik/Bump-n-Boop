@@ -20,4 +20,7 @@ public class LevelScriptable : ScriptableObject
 
     [Header("Boost value is multiplied to speed ( which is the tunnel speed)")]
     public float BoostMultiplier;
+
+    public LevelMode Mode;
+
 }

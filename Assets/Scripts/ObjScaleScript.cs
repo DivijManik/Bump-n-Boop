@@ -37,9 +37,12 @@ public class ObjScaleScript : MonoBehaviour
         {
             foreach (Transform item in ObjsToScale)
             {
+                item.DOComplete();
                 item.localScale = Vector3.zero;
             }
         }
     }
+
+
 
 }
