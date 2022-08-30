@@ -23,4 +23,6 @@ public class LevelScriptable : ScriptableObject
 
     public LevelMode Mode;
 
+    public int Obstacle_ZPos = 60;
+
 }

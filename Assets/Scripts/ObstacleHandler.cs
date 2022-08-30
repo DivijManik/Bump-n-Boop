@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class ObstacleHandler : MonoBehaviour
 {
     // Obstacle & collectibles z pos is to be 60f
-    const float zPos = 60f;
+    float zPos = 60f;
     
     List<Transform> StackObstacle = new List<Transform>();
     List<Transform> StackCol = new List<Transform>();
@@ -17,6 +17,11 @@ public class ObstacleHandler : MonoBehaviour
     [SerializeField] List<Transform> Boosts = new List<Transform>();
 
     Transform LastObj;
+
+    private void Start()
+    {
+        zPos = LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].Obstacle_ZPos;
+    }
 
     private void FixedUpdate()
     {
@@ -345,14 +350,13 @@ public class ObstacleHandler : MonoBehaviour
                 {
                     if (LastObj != null)
                     {
-                        t.position = new Vector3(t.position.x, t.position.y, LastObj.position.z + 10);
-
+                        t.position = new Vector3(t.position.x, t.position.y, LastObj.position.z + zPos);
 
                         t.eulerAngles = new Vector3(0, 0, LastObj.eulerAngles.z + 5f);
                     }
                     else
                     {
-                        t.position = new Vector3(t.position.x, t.position.y, zPos);
+                        t.position = new Vector3(t.position.x, t.position.y, 60);
                     }
                     LastObj = t;
                 }
@@ -368,41 +372,41 @@ public class ObstacleHandler : MonoBehaviour
 
     void SpiralBlockColor(Transform Blocks)
     {
-            int childWithSameColor = Random.Range(0, 2); // ..
+        int childWithSameColor = Random.Range(0, 2); // ..
 
-            int iter = 0;
-            string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+        int iter = 0;
+        string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
 
-            foreach (Transform childBlock in Blocks)
+        foreach (Transform childBlock in Blocks)
+        {
+            MeshRenderer BlockMR = childBlock.GetComponent<MeshRenderer>();
+
+            if (childWithSameColor == 1)
             {
-                MeshRenderer BlockMR = childBlock.GetComponent<MeshRenderer>();
+                int RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
+                BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
 
-                if (childWithSameColor == 1)
+                while (PlayerController.Instance.MatPrefabs[RandMat].name.Substring(0, 1) == BallMatName)
                 {
-                    int RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
+                    RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
                     BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
-
-                    while (PlayerController.Instance.MatPrefabs[RandMat].name.Substring(0, 1) == BallMatName)
-                    {
-                        RandMat = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
-                        BlockMR.material = PlayerController.Instance.MatPrefabs[RandMat];
-                    }
                 }
-                else
-                {
-                    BlockMR.material = MatName(BallMatName);
-                }
-                //else
-                //{
-                //    string BallMatName = PlayerController.Instance.Balls[1].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
-
-                //    BlockMR.material = MatName(BallMatName);
-                //}
-
-                iter++;
-
             }
+            else
+            {
+                BlockMR.material = MatName(BallMatName);
+            }
+            //else
+            //{
+            //    string BallMatName = PlayerController.Instance.Balls[1].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+            //    BlockMR.material = MatName(BallMatName);
+            //}
+
+            iter++;
+
         }
+    }
 }
 
 public enum LevelMode

@@ -32,3 +32,5 @@ MonoBehaviour:
   NoOfGems: 5
   LevelRewardGems: 10
   BoostMultiplier: 2
+  Mode: 0
+  Obstacle_ZPos: 45
