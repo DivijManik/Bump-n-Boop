@@ -18,6 +18,8 @@ public class ObstacleHandler : MonoBehaviour
 
     Transform LastObj;
 
+    [SerializeField] Material ObstacleMat;
+
     private void Start()
     {
         zPos = LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].Obstacle_ZPos;
@@ -229,7 +231,7 @@ public class ObstacleHandler : MonoBehaviour
                 }
             }
         }
-        else
+        else if (LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].Mode == LevelMode.Spiral)
         {
             List<Transform> t_ = StackCol.Where(x => x.position.z >= zPos).ToList();
 
@@ -270,6 +272,9 @@ public class ObstacleHandler : MonoBehaviour
                 }
             }
         }
+        //..
+        //.
+        //
     }
 
     Material MatName(string BallMatName)
