@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2296211232804898503}
   - component: {fileID: 4051322918012580365}
   - component: {fileID: 7565664803227514922}
+  - component: {fileID: -5682009747061915922}
   m_Layer: 0
   m_Name: StarBoss
   m_TagString: Obstacle
@@ -96,3 +97,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6239881831769578202, guid: 3fbc0aea398a94c42ae673ff40d83fce, type: 3}
+--- !u!114 &-5682009747061915922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2538285035373876184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdcc14167dd7473d967ab1801c5c41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EulerAngles:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 347.5796}
+  - {x: 0, y: 0, z: 281.75598}
+  rotationType: 0
+  rotationAxis: 2

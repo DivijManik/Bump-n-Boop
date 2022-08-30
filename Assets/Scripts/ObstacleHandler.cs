@@ -204,6 +204,25 @@ public class ObstacleHandler : MonoBehaviour
         }
     }
 
+    public void BlockColorOnNewBall()
+    {
+        Transform[] t_ = StackCol.Where(x => x.position.z >= zPos).ToArray();
+
+        foreach (Transform Blocks in t_)
+        {
+            int childWithSameColor = Random.Range(0, Blocks.childCount); // Get a random child object from blockParent
+
+            string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+            MeshRenderer[] childBlock = Blocks.GetComponentsInChildren<MeshRenderer>().Where(x => x.material.name.Substring(0, 1) == BallMatName).ToArray();
+
+            if (childBlock.Length == 0)
+            {
+                Blocks.GetChild(childWithSameColor).GetComponent<MeshRenderer>().material = MatName(BallMatName);
+            }
+        }
+    }
+
     Material MatName(string BallMatName)
     {
         if (BallMatName == "b")

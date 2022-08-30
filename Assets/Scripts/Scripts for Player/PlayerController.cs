@@ -454,6 +454,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         MeshRenderer MR = Balls[0].GetComponent<MeshRenderer>();
         PSys.startColor = new Color(MR.material.color.r, MR.material.color.g, MR.material.color.b);
         PSysObj.parent = Balls[0]; PSysObj.position = Balls[0].position;
+
+        obstacleHandler.BlockColorOnNewBall();
     }
 
     ///<summary>
@@ -514,6 +516,11 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                     }
 
                 }
+                else if(count == 0)
+                {
+                    obstacleHandler.BlockColorOnNewBall();
+                }
+
                 count = 0;
                 break;
             }
