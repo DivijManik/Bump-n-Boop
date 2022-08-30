@@ -211,19 +211,63 @@ public class ObstacleHandler : MonoBehaviour
 
     public void BlockColorOnNewBall()
     {
-        Transform[] t_ = StackCol.Where(x => x.position.z >= zPos).ToArray();
-
-        foreach (Transform Blocks in t_)
+        if (LevelManager.Instance.LevelSettings[LevelManager.PlayerLvl()].Mode == LevelMode.Normal)
         {
-            int childWithSameColor = Random.Range(0, Blocks.childCount); // Get a random child object from blockParent
+            Transform[] t_ = StackCol.Where(x => x.position.z >= zPos).ToArray();
 
-            string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
-
-            MeshRenderer[] childBlock = Blocks.GetComponentsInChildren<MeshRenderer>().Where(x => x.material.name.Substring(0, 1) == BallMatName).ToArray();
-
-            if (childBlock.Length == 0)
+            foreach (Transform Blocks in t_)
             {
-                Blocks.GetChild(childWithSameColor).GetComponent<MeshRenderer>().material = MatName(BallMatName);
+                int childWithSameColor = Random.Range(0, Blocks.childCount); // Get a random child object from blockParent
+
+                string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+                MeshRenderer[] childBlock = Blocks.GetComponentsInChildren<MeshRenderer>().Where(x => x.material.name.Substring(0, 1) == BallMatName).ToArray();
+
+                if (childBlock.Length == 0)
+                {
+                    Blocks.GetChild(childWithSameColor).GetComponent<MeshRenderer>().material = MatName(BallMatName);
+                }
+            }
+        }
+        else
+        {
+            List<Transform> t_ = StackCol.Where(x => x.position.z >= zPos).ToList();
+
+            Transform[] t_1 = t_.Where(x => x.childCount == 1).ToArray();
+
+            Transform[] t_2 = t_.Where(x => x.childCount > 1).ToArray();
+
+            //Transform
+
+            foreach (Transform Blocks in t_1)
+            {
+                int changeColor = Random.Range(0, 3);
+
+                if (changeColor == 1)
+                {
+                    string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+                    MeshRenderer[] childBlock = Blocks.GetComponentsInChildren<MeshRenderer>().Where(x => x.material.name.Substring(0, 1) == BallMatName).ToArray();
+
+                    if (childBlock.Length == 0)
+                    {
+                        Blocks.GetChild(0).GetComponent<MeshRenderer>().material = MatName(BallMatName);
+                    }
+                }
+            }
+
+            foreach (Transform Blocks in t_2)
+            {
+                int childWithSameColor = Random.Range(0, Blocks.childCount); // Get a random child object from blockParent
+
+                string BallMatName = PlayerController.Instance.Balls[0].GetComponent<MeshRenderer>().material.name.Substring(0, 1);
+
+                MeshRenderer[] childBlock = Blocks.GetComponentsInChildren<MeshRenderer>().Where(x => x.material.name.Substring(0, 1) == BallMatName).ToArray();
+
+                if (childBlock.Length == 0)
+                {
+                    Blocks.GetChild(childWithSameColor).GetComponent<MeshRenderer>().material = MatName(BallMatName);
+                }
             }
         }
     }
