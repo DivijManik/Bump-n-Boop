@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5156bd04384bfab9803538ccf418a, type: 3}
+  m_Name: Level 61
+  m_EditorClassIdentifier: 
+  NoOfBalls: 12
+  speed: -20
+  Obstacles:
+  - {fileID: 6546884538204138178, guid: 2b1022948df63470690a287f07bc7adc, type: 3}
+  - {fileID: 6645458696533732323, guid: 547bdce4cfad3431e9702c47698a70c6, type: 3}
+  ColObj:
+  - {fileID: 4603033963573697465, guid: 385d278f77ec0426881e100183019726, type: 3}
+  - {fileID: 8376891637808278621, guid: 643c909543c3f42bc84746628bb991eb, type: 3}
+  - {fileID: 4984933521394950202, guid: fc548fe7d226b4143ada3cd0aeccb2ff, type: 3}
+  - {fileID: 7211157141967506207, guid: 0b4056e9d98db493db9575332374cc17, type: 3}
+  - {fileID: 7211157141967506207, guid: ad0d25548006d4bf9b5b9348d3449249, type: 3}
+  ShowAd: 0
+  CubeSpawnLvl: 0
+  PlaneLevel: 0
+  NoOfGems: 5
+  LevelRewardGems: 10
+  BoostMultiplier: 1.5
+  Mode: 0
+  Obstacle_ZPos: 45

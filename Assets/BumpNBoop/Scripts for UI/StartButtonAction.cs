@@ -144,4 +144,15 @@ public class StartButtonAction : MonoBehaviour {
             FindObjectOfType<AudioListener>().enabled = true;
         }
     }
+
+    ///
+    public void OnShareButtonClick()
+    {
+        new NativeShare().SetSubject("Try This Game!").SetText("Hi Try Bump'n Boop today, it's available for FREE!")
+            .SetUrl("https://play.google.com/store/search?q=pub%3ABoltAim&c=apps").Share();
+
+        
+        //.SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
+        
+    }
 }
