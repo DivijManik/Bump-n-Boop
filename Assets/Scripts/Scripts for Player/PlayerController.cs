@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     private void RequestBanner()
     {
 #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-9285045534177890/3505990696";
+            string adUnitId = "ca-app-pub-9285045534177890/5950763582";
 #elif UNITY_IPHONE
             string adUnitId = "ca-app-pub-9285045534177890/7577931790";
 #else

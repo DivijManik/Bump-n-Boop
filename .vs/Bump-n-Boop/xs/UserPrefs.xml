@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a78fe8fc-39d0-4d42-a232-ad3207179914" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="522" Column="18" IsPinned="True" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="185" Column="72" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="94" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="14" />
@@ -13,7 +12,6 @@
       <File FileName="Assets/Scripts/ObjScaleScript.cs" Line="31" Column="10" />
       <File FileName="Assets/Scripts/LevelScriptable.cs" Line="27" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" Line="12" Column="6" />
-      <File FileName="Assets/Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,8 +29,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="111658af-58e6-4889-97f9-70affbdea9e8" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
