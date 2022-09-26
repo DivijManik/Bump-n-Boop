@@ -8,6 +8,9 @@ using GoogleMobileAds.Api;
 
 public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
+    [SerializeField]
+    Transform[] Skins;
+
     public static PlayerController Instance;
 
     float BallPos;
@@ -109,8 +112,15 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         }
         */
 
+        string s = PlayerPrefs.GetString("currentSkin");
+        foreach (Transform t in Skins)
+        {
+            if(t.name == s)
+                Ball = t;
+        }
+
     }
-    
+
     void Start()
     {
         // Initialize Ads
