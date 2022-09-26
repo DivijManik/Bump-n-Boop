@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class SmallIntervalScript : MonoBehaviour {
 
-	void FixedUpdate ()
+    [SerializeField]
+    Transform[] Tetris_shapes;
+
+    private void Awake()
+    {
+        Instantiate(Tetris_shapes[Random.Range(0, Tetris_shapes.Length)], transform);
+
+        MeshRenderer SIMeshRend = transform.GetChild(0).GetComponent<MeshRenderer>();
+
+        int RandColor = Random.Range(0, PlayerController.Instance.MatPrefabs.Length);
+
+        SIMeshRend.material = PlayerController.Instance.MatPrefabs[RandColor];
+    }
+
+    void FixedUpdate ()
 	{
         if (!PlayerController.Instance.StartGame) { return; }
 

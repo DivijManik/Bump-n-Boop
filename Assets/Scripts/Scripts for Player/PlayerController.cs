@@ -636,37 +636,35 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                 yield return new WaitUntil(isStartGame);
 
                 Transform SmallIntBlock_ = Instantiate(SmallIntervalBlock, new Vector3(Random.Range(-4f, 4f), Random.Range(-4f, 4f), 20f), Quaternion.identity, SmallBlockParents);
-
-                MeshRenderer SIMeshRend = SmallIntBlock_.GetChild(0).GetComponent<MeshRenderer>();
-
-                int RandColor = Random.Range(0, MatPrefabs.Length);
-
-                SIMeshRend.material = MatPrefabs[RandColor];
             }
             // we can also make levels without initializing for asthetic look
             StartCoroutine(InitSmallIntervalBlocks());
         }
         else
         {
+            float pos = 1f;
             foreach(Transform t in SmallBlockParents)
             {
                 yield return new WaitUntil(isStartGame);
 
                 if (t.position.z < MainCam.position.z)
                 {
-                    StartCoroutine(SmallBlocksToBack(t));
+                    StartCoroutine(SmallBlocksToBack(t, pos));
                 }
+                pos++;
             }
         }
     }
 
 
-
-    IEnumerator SmallBlocksToBack(Transform t)
+    IEnumerator SmallBlocksToBack(Transform t, float f)
     {
         yield return new WaitUntil(isStartGame);
+        int rot = Random.Range(0, 4);
 
-        t.position = new Vector3(Random.Range(-7f, 7f), Random.Range(-4f, 4f), 20f);
+        t.eulerAngles = new Vector3(0, 0, 90 * rot);
+
+        t.position = new Vector3(Random.Range(-7f, 7f), Random.Range(-4f, 4f), 20f + f);
         MeshRenderer SIMeshRend = t.GetChild(0).GetComponent<MeshRenderer>();
 
         int RandColor = Random.Range(0, MatPrefabs.Length);
