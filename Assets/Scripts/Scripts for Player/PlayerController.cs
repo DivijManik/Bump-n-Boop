@@ -89,6 +89,9 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     [SerializeField] ObstacleHandler obstacleHandler;
 
+
+    [SerializeField] TextMeshProUGUI LvlText;
+
     private void Awake()
     {
         if (Instance == null)
@@ -231,8 +234,10 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             LevelN();
 
             LevelText.text = "Level " + PlayerLevel.ToString();
+            LvlText.text = "Level " + PlayerLevel.ToString();
+            // in game lvltext;
+            StartCoroutine(LvlTextActive());
 
-            
             if (Parent.childCount > 0)
             {
                 for (int i = 0; i < Parent.childCount; i++)
@@ -705,6 +710,15 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     {
         PlayerPrefs.SetInt("Level",PlayerLevel);
         //Debug.Log(clevel);
+    }
+
+    IEnumerator LvlTextActive()
+    {
+        LvlText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        LvlText.gameObject.SetActive(false);
     }
 }
 
