@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Rendering.PostProcessing;
 
 using DG.Tweening;
 
@@ -25,9 +24,6 @@ public class StartButtonAction : MonoBehaviour {
     [SerializeField]
     Image VibImg;
 
-    [SerializeField]
-    PostProcessVolume postProcess;
-
     private void Start()
     {
         //ScriptHolderPANEL.gameObject.SetActive(false);
@@ -46,7 +42,7 @@ public class StartButtonAction : MonoBehaviour {
         PlayerController.Instance.StartGame = true;
         //postProcess.weight = 0;
 
-        DOTween.To(() => postProcess.weight, x => postProcess.weight = x, 0, 0.5f);
+        //DOTween.To(() => postProcess.weight, x => postProcess.weight = x, 0, 0.5f);
         //.OnUpdate(() => {
 
         
