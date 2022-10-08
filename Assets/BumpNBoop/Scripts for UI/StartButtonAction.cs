@@ -132,19 +132,21 @@ public class StartButtonAction : MonoBehaviour {
         if (PlayerPrefs.GetInt("UseVolume") == 0)
         {
             VolImg.sprite = VolOffImg;
-            FindObjectOfType<AudioListener>().enabled = false;
+            //FindObjectOfType<AudioListener>().enabled = false;
+            AudioManager.Instance.gameObject.SetActive(false);
         }
         else
         {
             VolImg.sprite = VolOnImg;
-            FindObjectOfType<AudioListener>().enabled = true;
+            //FindObjectOfType<AudioListener>().enabled = true;
+            AudioManager.Instance.gameObject.SetActive(true);
         }
     }
 
     ///
     public void OnShareButtonClick()
     {
-        new NativeShare().SetSubject("Try This Game!").SetText("Hi Try Bump'n Boop today, it's available for FREE!")
+        new NativeShare().SetSubject("Try This Game!").SetText("Hi Try Tunnel Bump game today, it's available for FREE! \n I'm on level " + PlayerPrefs.GetInt("Level") + "!! \n Can you beat it?")
             .SetUrl("https://play.google.com/store/search?q=pub%3ABoltAim&c=apps").Share();
 
         

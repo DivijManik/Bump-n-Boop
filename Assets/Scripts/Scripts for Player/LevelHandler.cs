@@ -47,7 +47,7 @@ public class LevelHandler : MonoBehaviour
                 t.GetComponent<Button>().onClick.AddListener(delegate { OnPlayingLvlClicked(); });
                 tChild.GetComponent<Image>().sprite = levelOpenImg;
             }
-            //else if(f<= currentLvl)
+            else if(f<= currentLvl)
             {
                 t.GetComponent<Button>().onClick.AddListener(delegate { OnLevelClicked(f); });
                 tChild.GetComponent<Image>().sprite = levelOpenImg;
@@ -63,12 +63,12 @@ public class LevelHandler : MonoBehaviour
         int lvl = PlayerPrefs.GetInt("Level");
         int currentLvl = PlayerPrefs.GetInt("CurrenLvl");
 
-        //if (lvl > currentLvl)
+        if (lvl > currentLvl)
         {
             PlayerPrefs.SetInt("CurrenLvl", lvl);
         }
 
-        //if (i <= currentLvl)
+        if (i <= currentLvl)
         {
             PlayerPrefs.SetInt("Level", i);
             SceneManager.LoadScene(0);

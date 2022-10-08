@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using TMPro;
 using GoogleMobileAds.Api;
 
+using DG.Tweening;
+
 public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField]
@@ -332,19 +334,19 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         /// </summary>
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Balls[0].transform.Translate(-0.1f, 0, 0);
+            Balls[0].transform.Translate(-0.2f, 0, 0);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            Balls[0].transform.Translate(0.1f, 0, 0);
+            Balls[0].transform.Translate(0.2f, 0, 0);
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Balls[0].transform.Translate(0, 0.1f, 0);
+            Balls[0].transform.Translate(0, 0.2f, 0);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Balls[0].transform.Translate(0, -0.1f, 0);
+            Balls[0].transform.Translate(0, -0.2f, 0);
         }
         ///<summary>
         /// 
@@ -392,8 +394,9 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
                     Vector3 ToPos = new Vector3(Balls[i - 1].transform.position.x, Balls[i - 1].transform.position.y, Balls[i - 1].transform.position.z - 1.1f);
                     //Vector3 ToPosz = new Vector3(Balls[i].transform.position.x, Balls[i].transform.position.y, Balls[i - 1].transform.position.z - 1.1f);
 
-                    Balls[i].transform.position = Vector3.Slerp(Balls[i].transform.position, ToPos, 1f / Mathf.Abs(7 - i));
-                    //Balls[i].transform.position = Vector3.Slerp(Balls[i].transform.position, ToPos, 1f);
+                    //Balls[i].transform.position = Vector3.Slerp(Balls[i].transform.position, ToPos, 1f / Mathf.Abs(7 - i));
+
+                    Balls[i].transform.DOMove(ToPos, 0.2f);
                 }
             }
         }

@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="103f7c75-845e-4c9b-9af0-ae91488d1081" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/LevelHandler.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="719" Column="45" IsPinned="True" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="723" Column="2" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="94" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="14" />
@@ -12,6 +11,10 @@
       <File FileName="Assets/Scripts/ObjScaleScript.cs" Line="31" Column="10" />
       <File FileName="Assets/Scripts/LevelScriptable.cs" Line="27" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" Line="12" Column="6" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="23" Column="1" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="49" Column="1" />
+      <File FileName="Assets/Scripts/Scripts for Player/LevelHandler.cs" Line="50" Column="15" />
+      <File FileName="Assets/Helper Scripts/Screenshots.cs" Line="29" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,10 +32,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="37555c41-4f01-480c-9d64-20e0c18d131f" />
 </Properties>
