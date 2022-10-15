@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using DG.Tweening;
+using GoogleMobileAds.Api;
 
 public class StartButtonAction : MonoBehaviour {
 
@@ -152,5 +153,11 @@ public class StartButtonAction : MonoBehaviour {
         
         //.SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
         
+    }
+
+    public void RemoveAds()
+    {
+        PlayerPrefs.SetInt("RemoveAds", 1);
+        PlayerController.Instance.bannerView.Destroy();
     }
 }

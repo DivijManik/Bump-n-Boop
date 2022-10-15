@@ -1,12 +1,17 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dedbacbe-02dd-4bcb-b9d1-59ed6abc5632" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2086c387-a083-4ed9-8f5c-ba10adf53060" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="110" Column="23" IsPinned="True" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="362" Column="28" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="94" Column="1" />
-      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="14" />
+      <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="1" />
       <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="45" Column="6" />
       <File FileName="Assets/Vibration/Vibration.cs" Line="49" Column="24" />
       <File FileName="Assets/Scripts/ObjRotattionScript.cs" Line="1" Column="1" />
@@ -14,7 +19,7 @@
       <File FileName="Assets/Scripts/LevelScriptable.cs" Line="27" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" Line="12" Column="6" />
       <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="23" Column="1" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="146" Column="8" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="146" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/LevelHandler.cs" Line="73" Column="13" />
       <File FileName="Assets/Helper Scripts/Screenshots.cs" Line="29" Column="6" />
     </Files>
@@ -34,9 +39,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
 </Properties>

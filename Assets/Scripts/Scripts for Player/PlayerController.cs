@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     GameObject TunnelObj;
 
-    BannerView bannerView;// = new BannerView("ca-app-pub-9285045534177890/3505990696", AdSize.Banner, 0, 50);
+    public BannerView bannerView;// = new BannerView("ca-app-pub-9285045534177890/3505990696", AdSize.Banner, 0, 50);
 
     [SerializeField] ObstacleHandler obstacleHandler;
 
@@ -128,9 +128,13 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     void Start()
     {
-        // Initialize Ads
-        MobileAds.Initialize(initStatus => { });
-        this.RequestBanner();
+        if (!PlayerPrefs.HasKey("RemoveAds") || PlayerPrefs.GetInt("RemoveAds") == 0)
+        {
+            // Initialize Ads
+            MobileAds.Initialize(initStatus => { });
+            this.RequestBanner();
+        }
+
 
         // set ball spwn count & no of lvls
         BallSpawnNumber = LevelManager.Instance.LevelSettings[PlayerLevel].NoOfBalls; // number of balls to spawn
