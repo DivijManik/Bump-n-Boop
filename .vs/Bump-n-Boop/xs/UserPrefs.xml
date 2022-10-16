@@ -1,16 +1,12 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dedbacbe-02dd-4bcb-b9d1-59ed6abc5632" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3935372c-668e-4ca5-aaac-2f8b50b1b898" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TunnelScript.cs">
     <Files>
       <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="362" Column="28" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
-      <File FileName="Assets/Scripts/TunnelScript.cs" Line="94" Column="1" />
+      <File FileName="Assets/Scripts/TunnelScript.cs" Line="51" Column="6" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="1" />
       <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="45" Column="6" />
       <File FileName="Assets/Vibration/Vibration.cs" Line="49" Column="24" />
@@ -39,4 +35,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

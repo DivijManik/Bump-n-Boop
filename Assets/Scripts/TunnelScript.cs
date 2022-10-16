@@ -27,9 +27,12 @@ public class TunnelScript : MonoBehaviour
     [SerializeField] Color[] colors;
     [SerializeField] Material TunnelMat;
 
+    float hueValue;
+
     private void Awake()
     {
-        if(Instance == null)
+
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -39,6 +42,22 @@ public class TunnelScript : MonoBehaviour
         }
 
         tunnelSpeed = tunnelRealSpeed;
+
+        //hueValue = Random.Range(0, 1f);
+        //foreach (Transform t in tunnelObj)
+        //{
+        //    ChangeColor(t.GetComponent<MeshRenderer>());
+        //}
+    }
+
+    void ChangeColor(MeshRenderer MR)
+    {
+        MR.material.color = UnityEngine.Color.HSVToRGB(hueValue, 0.6f, 0.8f);
+        hueValue += 0.08f;
+        if (hueValue >= 1)
+        {
+            hueValue = 0;
+        }
     }
 
     private void Start()
@@ -65,6 +84,7 @@ public class TunnelScript : MonoBehaviour
                 t.transform.position = tunnelObj[tunnelObj.Count - 1].position + new Vector3(0, 0, 60);
 
                 tunnelObj.Add(t);
+                //ChangeColor(t.GetComponent<MeshRenderer>());
             }
         }
     }
