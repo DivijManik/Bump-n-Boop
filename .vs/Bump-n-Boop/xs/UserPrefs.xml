@@ -1,14 +1,7 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="02b73e55-a400-44ff-8290-e45da1051a2e" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BumpNBoop/Scripts for UI/SkinsHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="362" Column="28" IsPinned="True" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="458" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="51" Column="6" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="1" />
@@ -17,12 +10,12 @@
       <File FileName="Assets/Scripts/ObjRotattionScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ObjScaleScript.cs" Line="31" Column="10" />
       <File FileName="Assets/Scripts/LevelScriptable.cs" Line="27" Column="1" />
-      <File FileName="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" Line="12" Column="6" />
+      <File FileName="Assets/Scripts/Scripts for Player/DestroyAnimEvent.cs" Line="22" Column="17" />
       <File FileName="Assets/BumpNBoop/Scripts for UI/PauseButtonAction.cs" Line="23" Column="1" />
       <File FileName="Assets/BumpNBoop/Scripts for UI/StartButtonAction.cs" Line="146" Column="1" />
       <File FileName="Assets/Scripts/Scripts for Player/LevelHandler.cs" Line="60" Column="1" />
       <File FileName="Assets/Helper Scripts/Screenshots.cs" Line="29" Column="6" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/SkinsHandler.cs" Line="31" Column="17" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/SkinsHandler.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,4 +33,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c69547cb-c3c9-4b8a-ba56-aff5b4d26314" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

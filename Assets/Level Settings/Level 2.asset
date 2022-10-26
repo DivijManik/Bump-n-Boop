@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   NoOfBalls: 5
-  speed: -9
+  speed: -15
   Obstacles:
   - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
   - {fileID: 8388101977599716590, guid: 4e966a3d4c2fa4657aceb588d3b08e5e, type: 3}

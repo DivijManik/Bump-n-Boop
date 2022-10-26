@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A_Instructions Lvl
   m_EditorClassIdentifier: 
   NoOfBalls: 3
-  speed: -7
+  speed: -15
   Obstacles:
   - {fileID: 8472260449102909415, guid: 5c790e8b034da48d3b63f5c6dc0355d6, type: 3}
   ColObj:

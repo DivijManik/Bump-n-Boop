@@ -454,7 +454,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         {
             StartCoroutine(SetParticleColor());
 
-            Balls[0].position = new Vector3(Balls[0].position.x, Balls[0].position.y, 0);
+            //Balls[0].position = Vector3.zero;
 
             //FirstBallCol.remove = false;
             if (Balls[0].GetComponent<CollisionDetect>() == null)
