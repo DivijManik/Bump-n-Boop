@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="458" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="354" Column="10" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="51" Column="6" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="1" />

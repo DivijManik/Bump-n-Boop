@@ -365,7 +365,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
                 if (touch.phase == TouchPhase.Moved)
                 {
-                    Balls[0].transform.Translate(touch.deltaPosition.x * 0.02f, touch.deltaPosition.y * 0.02f, 0);
+                    Balls[0].transform.Translate(touch.deltaPosition.x * 0.01f, touch.deltaPosition.y * 0.01f, 0);
                 }
             }
         }
