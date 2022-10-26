@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="354" Column="10" IsPinned="True" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="521" Column="35" IsPinned="True" />
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="51" Column="6" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="95" Column="1" />
@@ -33,11 +35,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="947602e7-f68c-411e-9da4-3d7882cb2179" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c69547cb-c3c9-4b8a-ba56-aff5b4d26314" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

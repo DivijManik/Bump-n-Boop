@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
 
     [SerializeField] TextMeshProUGUI LvlText;
 
+    [SerializeField] GameObject ColSprite;
     private void Awake()
     {
         if (Instance == null)
@@ -490,6 +491,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         Transform BallInit = Instantiate(Ball,new Vector3(Balls[0].position.x, Balls[0].position.y, 0), Quaternion.identity, Parent.transform);
         MeshRenderer BallInitMat = BallInit.gameObject.GetComponent<MeshRenderer>();
 
+        
+
         // Material String
         if(mat == "b")
         {
@@ -511,6 +514,11 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
         {
             BallInitMat.material = MatPrefabs[4];
         }
+
+        ColSprite.SetActive(false);
+        ColSprite.transform.position = Balls[0].position;
+        ColSprite.GetComponent<SpriteRenderer>().color = BallInitMat.material.color;
+        ColSprite.SetActive(true);
 
         Destroy(FirstBallCol); // Destroy old collison detect at Balls[0]     Imp.
 
