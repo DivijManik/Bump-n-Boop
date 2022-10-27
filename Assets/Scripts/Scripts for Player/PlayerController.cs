@@ -95,6 +95,8 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
     [SerializeField] TextMeshProUGUI LvlText;
 
     [SerializeField] GameObject ColSprite;
+    [SerializeField] public GameObject GameOverScreen;
+
     private void Awake()
     {
         if (Instance == null)

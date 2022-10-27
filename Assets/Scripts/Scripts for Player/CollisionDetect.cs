@@ -55,6 +55,7 @@ public class CollisionDetect : MonoBehaviour
         else if(other.transform.CompareTag("Obstacle"))
         {
             AudioManager.Instance.PlaySoundEffect(Sounds.ObstacleCollide);
+            PlayerController.Instance.GameOverScreen.SetActive(true);
             PlayerController.Instance.StartGame = false;
             StartCoroutine(WaitToRestartLevel());
 
@@ -114,7 +115,7 @@ public class CollisionDetect : MonoBehaviour
     {
         AudioManager.Instance.BG_MusicSpeed(false);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         SceneManager.LoadScene(0);
     }
