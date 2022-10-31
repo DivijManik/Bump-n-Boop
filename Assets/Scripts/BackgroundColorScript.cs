@@ -12,4 +12,10 @@ public class BackgroundColorScript : MonoBehaviour
     {
         transform.GetComponent<GradientSkyCamera>().gradient = RandColours[Random.Range(0, RandColours.Length)];
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
 }
