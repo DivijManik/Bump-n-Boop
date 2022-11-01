@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 using GoogleMobileAds.Api;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SkinsHandler : MonoBehaviour
 {
@@ -16,14 +17,21 @@ public class SkinsHandler : MonoBehaviour
     AdRequest request;
     private void Start()
     {
+        string adUnitId;
 #if UNITY_ANDROID
-        this.rewardedAd = new RewardedAd("ca-app-pub-9285045534177890/5117380834");
+        adUnitId = "ca-app-pub-3940256099942544/5224354917";
 #elif UNITY_IPHONE
-        this.rewardedAd = new RewardedAd("ca-app-pub-9285045534177890/4159522385");
+            adUnitId = "ca-app-pub-3940256099942544/1712485313";
+#else
+            adUnitId = "unexpected_platform";
 #endif
-        // Create an empty ad request.
-        request = new AdRequest.Builder().Build();
-        
+        AdRequest request = new AdRequest.Builder().Build();
+
+        this.rewardedAd = new RewardedAd(adUnitId);
+        this.rewardedAd.OnUserEarnedReward += RewardedAd_OnUserEarnedReward;
+
+        // Load the rewarded ad with the request.
+        this.rewardedAd.LoadAd(request);
 
         if (!PlayerPrefs.HasKey("Skins"))
         {
@@ -71,16 +79,20 @@ public class SkinsHandler : MonoBehaviour
     string s_;
     void UnlockUsingAd(string s)
     {
+        Debug.Log("showing ad");
         s_ = s;
 
-        // Load the rewarded ad with the request.
-        this.rewardedAd.LoadAd(request);
 
-        this.rewardedAd.OnUserEarnedReward += RewardedAd_OnUserEarnedReward; 
+        if (this.rewardedAd.IsLoaded())
+        {
+            this.rewardedAd.Show();
 
-        
+        }
+        else
+        {
+            StartCoroutine(WaitShowAd());
+        }
     }
-
     private void RewardedAd_OnUserEarnedReward(object sender, Reward e)
     {
         string s = PlayerPrefs.GetString("Skins");
@@ -88,7 +100,20 @@ public class SkinsHandler : MonoBehaviour
             s += s_;
 
         PlayerPrefs.SetString("Skins", s);
+        PlayerPrefs.SetString("currentSkin", s_);
 
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator WaitShowAd()
+    {
+        yield return new WaitUntil(AdLaoded);
+
+        this.rewardedAd.Show();
+    }
+
+    private bool AdLaoded()
+    {
+        return this.rewardedAd.IsLoaded();
     }
 }
