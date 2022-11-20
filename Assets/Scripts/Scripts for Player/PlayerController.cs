@@ -126,12 +126,12 @@ public class PlayerController : MonoBehaviour, IPointerUpHandler, IPointerDownHa
             if(t.name == s)
                 Ball = t;
         }
-        MobileAds.Initialize(initStatus => { });
-
     }
 
     void Start()
     {
+        MobileAds.Initialize(initStatus => { });
+
         if (!PlayerPrefs.HasKey("RemoveAds") || PlayerPrefs.GetInt("RemoveAds") == 0)
         {
             // Initialize Ads

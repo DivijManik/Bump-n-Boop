@@ -1,10 +1,15 @@
 ﻿<Properties StartupConfiguration="{EDA01B9B-105E-D717-DC72-DC82435B88D9}|">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scripts for Player/PlayerController.cs">
     <Files>
       <File FileName="Assets/Scripts/ObstacleHandler.cs" Line="464" Column="11" IsPinned="True" />
-      <File FileName="Assets/BumpNBoop/Scripts for UI/SkinsHandler.cs" Line="103" Column="50" IsPinned="True" />
+      <File FileName="Assets/BumpNBoop/Scripts for UI/SkinsHandler.cs" Line="24" Column="65" IsPinned="True" />
       <File FileName="Assets/Scripts/Scripts for Player/LevelHandler.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="130" Column="1" />
+      <File FileName="Assets/Scripts/Scripts for Player/PlayerController.cs" Line="129" Column="6" />
       <File FileName="Assets/Scripts/TunnelScript.cs" Line="51" Column="6" />
       <File FileName="Assets/Scripts/Scripts for Player/CollisionDetect.cs" Line="118" Column="47" />
       <File FileName="Assets/Scripts/Managers/AudioManager.cs" Line="45" Column="6" />
@@ -33,11 +38,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a4486495-2e51-4002-9e85-1e621f8fbfde" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ac61a89c-1796-48fd-8723-424294a86bbf" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
